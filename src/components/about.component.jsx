@@ -2,93 +2,93 @@ import "./about.styles.scss";
 
 const About = () => {
   return (
-    <div className="AboutContainer">
-      <div className="skillsContainer">
-        <div className="skill-box">
+    <div id="about" className="AboutContainer container-fluid g-0">
+      <div className="skillsContainer row">
+        <div className="skill-box col">
           <span className="title">HTML5</span>
           <div className="skill-bar">
             <span className="skill-per html">
-              <span className="tooltip">95%</span>
+              <span className="testTooltip">95%</span>
             </span>
           </div>
         </div>
-        <div className="skill-box">
+        <div className="skill-box col">
           <span className="title">CSS</span>
           <div className="skill-bar">
             <span className="skill-per css">
-              <span className="tooltip">95%</span>
+              <span className="testTooltip">95%</span>
             </span>
           </div>
         </div>
-        <div className="skill-box">
+        <div className="skill-box col">
           <span className="title">Javascript</span>
           <div className="skill-bar">
             <span className="skill-per javascript">
-              <span className="tooltip">90%</span>
+              <span className="testTooltip">90%</span>
             </span>
           </div>
         </div>
-        <div className="skill-box">
+        <div className="skill-box col">
           <span className="title">SCSS</span>
           <div className="skill-bar">
             <span className="skill-per scss">
-              <span className="tooltip">90%</span>
+              <span className="testTooltip">90%</span>
             </span>
           </div>
         </div>
-        <div className="skill-box">
+        <div className="skill-box col">
           <span className="title">React</span>
           <div className="skill-bar">
             <span className="skill-per react">
-              <span className="tooltip">80%</span>
+              <span className="testTooltip">80%</span>
             </span>
           </div>
         </div>
-        <div className="skill-box">
+        <div className="skill-box col">
           <span className="title">NextJS</span>
           <div className="skill-bar">
             <span className="skill-per nextjs">
-              <span className="tooltip">60%</span>
+              <span className="testTooltip">55%</span>
             </span>
           </div>
         </div>
-        <div className="skill-box">
+        <div className="skill-box col">
           <span className="title">NodeJS</span>
           <div className="skill-bar">
             <span className="skill-per nodejs">
-              <span className="tooltip">50%</span>
+              <span className="testTooltip">55%</span>
             </span>
           </div>
         </div>
-        <div className="skill-box">
+        <div className="skill-box col">
           <span className="title">Typescript</span>
           <div className="skill-bar">
             <span className="skill-per typescript">
-              <span className="tooltip">50%</span>
+              <span className="testTooltip">55%</span>
             </span>
           </div>
         </div>
-        <div className="skill-box">
+        <div className="skill-box col">
           <span className="title">MySQL</span>
           <div className="skill-bar">
-            <span className="skill-per typescript">
-              <span className="tooltip">45%</span>
+            <span className="skill-per mysql">
+              <span className="testTooltip">50%</span>
             </span>
           </div>
         </div>
-        <div className="skill-box">
+        <div className="skill-box col">
           <span className="title">MongoDB</span>
           <div className="skill-bar">
             <span className="skill-per mongodb">
-              <span className="tooltip">40%</span>
+              <span className="testTooltip">50%</span>
             </span>
           </div>
         </div>
-        <div className="skill-box">
+        <div className="skill-box col">
           <span className="title">Firebase</span>
           <div className="skill-bar">
             <span className="skill-per firebase">
-              <span className="tooltip">40%</span>
+              <span className="testTooltip">45%</span>
             </span>
           </div>
         </div>
@@ -102,7 +102,11 @@ const About = () => {
           decided to fortify what I'd learned by enrolling in a boot camp. This
           immersive experience not only expanded my technical skills but also
           provided a deeper understanding of the intricacies within the coding
-          world. I hope to one day have the opportunity to make my place in this
+          world.
+        </p>
+
+        <p>
+          I hope to one day have the opportunity to make my place in this
           industry.
         </p>
       </div>

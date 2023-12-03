@@ -27,7 +27,7 @@ const Projects = () => {
   });
 
   return (
-    <div className="ProjectsContainer">
+    <div id="projects" className="ProjectsContainer">
       <a
         href="https://github.com/GenAnderson/pokedex"
         target="_blank"
