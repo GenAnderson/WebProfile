@@ -3,6 +3,7 @@ import Projects from "./components/Projects.component.jsx";
 import About from "./components/about.component.jsx";
 
 import "./App.scss";
+import "./components/Projects.styles.scss";
 
 // bootstrap imports
 import "bootstrap/dist/css/bootstrap.min.css";

@@ -1,14 +1,19 @@
 .ProjectsContainer {
   background-color: #2d232e;
-  // height: 100%;
-  // width: 100%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   font-size: 1.4rem;
+  transition: ease-in-out 0.5s;
+
+  &:hover {
+    .card {
+      filter: grayscale(1);
+    }
+  }
 
   a {
     display: flex;
@@ -19,28 +24,49 @@
   .card {
     flex-direction: row;
     background-color: #2d232e;
-    max-width: 80%;
-    align-items: center;
+    max-width: 90%;
     color: #f1f0ea;
     padding: 1rem;
     border: none;
+    transition: 0.3s ease;
+    transform: translateY(5rem);
 
     &:hover {
       background-color: #534b52;
       transition: ease 0.1s;
       transform: translate(0.1rem, -0.3rem);
-      cursor: pointer;
       box-shadow: 0.3rem 0.5rem 0.7rem black;
+      filter: grayscale(0);
     }
   }
 
   .card-title {
     font-size: 1.6rem;
   }
+
   .card-img {
     width: 40%;
     object-fit: contain;
   }
+
+  .card-text {
+    padding: 2rem 0rem;
+  }
+  .cardLinks {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-link {
+    border-radius: 0.5rem;
+    transform: translateY(0);
+    img {
+      max-width: 3rem;
+    }
+    &:hover {
+      color: #f1f0eab4;
+    }
+  }
+
   .shiftUp {
     transition: transform 0.5s;
     transform: translateY(0rem);
