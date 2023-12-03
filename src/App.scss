@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap";
+
+// Reusables
+a:link,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:visited {
+  cursor: pointer;
+  color: inherit;
+}
+
+// Main App Component
+.AppContainer {
+  height: 100vh;
+}

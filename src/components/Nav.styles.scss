@@ -1,0 +1,28 @@
+.NavContainer {
+  height: 100%;
+  width: 33.4%;
+  background-color: #534b52;
+  color: #f1f0ea;
+  padding: 10rem 1rem 1rem 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+  position: fixed;
+  box-shadow: 0.3rem 0.5rem 0.7rem black;
+
+  .nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 4rem;
+    font-size: 1.4rem;
+  }
+
+  .btn-primary {
+    margin-top: 5rem;
+    background-color: #f1f0ea;
+    border: black;
+    border-radius: 50%;
+    img {
+      width: 2.5rem;
+    }
+  }
+}
