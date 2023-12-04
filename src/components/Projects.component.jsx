@@ -57,7 +57,7 @@ const Projects = () => {
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
           </div>
-          <Stack direction="horizontal" gap={2}>
+          <Stack direction="horizontal" gap={2} className="longBadges">
             <Badge pill bg="primary">
               JS
             </Badge>
@@ -91,20 +91,20 @@ const Projects = () => {
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
           </div>
-          <Stack direction="horizontal" gap={2} className="row-auto">
-            <Badge pill bg="primary" className="col-xs-auto">
+          <Stack direction="horizontal" gap={2} className="longBadges">
+            <Badge pill bg="primary">
               JS
             </Badge>
-            <Badge pill bg="success" className="col-xs-auto">
+            <Badge pill bg="success">
               React Native
             </Badge>
-            <Badge pill bg="success" className="col-xs-auto">
+            <Badge pill bg="success">
               Node.js
             </Badge>
-            <Badge pill bg="secondary" className="col-xs-auto">
+            <Badge pill bg="secondary">
               Firestore
             </Badge>
-            <Badge pill bg="secondary" className="col-xs-auto">
+            <Badge pill bg="secondary">
               Expo
             </Badge>
           </Stack>
@@ -137,7 +137,7 @@ const Projects = () => {
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
           </div>
-          <Stack direction="horizontal" gap={2}>
+          <Stack direction="horizontal" gap={2} className="longBadges">
             <Badge pill bg="primary">
               JS
             </Badge>
@@ -181,7 +181,7 @@ const Projects = () => {
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
           </div>
-          <Stack direction="horizontal" gap={2}>
+          <Stack direction="horizontal" gap={2} className="longBadges">
             <Badge pill bg="success">
               React
             </Badge>
@@ -225,7 +225,7 @@ const Projects = () => {
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
           </div>
-          <Stack direction="horizontal" gap={2}>
+          <Stack direction="horizontal" gap={2} className="longBadges">
             <Badge pill bg="primary">
               JS
             </Badge>
@@ -272,7 +272,7 @@ const Projects = () => {
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
           </div>
-          <Stack direction="horizontal" gap={2}>
+          <Stack direction="horizontal" gap={2} className="longBadges">
             <Badge pill bg="primary">
               Typescript
             </Badge>

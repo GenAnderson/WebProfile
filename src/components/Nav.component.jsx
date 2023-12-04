@@ -18,14 +18,24 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-      <a
-        href="https://github.com/GenAnderson?tab=repositories"
-        className="gitHubLink"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img src="whiteGitHub.png" alt="github icon" />
-      </a>
+      <div className="contactLinks">
+        <a
+          href="mailto:genanderson78@gmail.com"
+          className="contactLink"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="email.png" alt="github icon" />
+        </a>
+        <a
+          href="https://github.com/GenAnderson?tab=repositories"
+          className="contactLink"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="whiteGitHub.png" alt="github icon" />
+        </a>
+      </div>
     </div>
   );
 };

@@ -59,6 +59,18 @@
     }
   }
 
+  // Max width 608px
+  @media (max-width: 38em) {
+    .card {
+      background-color: #534b52;
+
+      .longBadges {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
   .card-title {
     font-size: 1.6rem;
   }
