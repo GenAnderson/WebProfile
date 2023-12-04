@@ -5,7 +5,6 @@
   width: 100%;
   padding: 5rem;
   font-size: 1.6rem;
-
   display: flex;
   justify-content: space-evenly;
 }
@@ -17,6 +16,33 @@
   padding: 3rem;
   align-self: center;
   border-radius: 0.5rem;
+}
+
+// max 960px
+@media (max-width: 60em) {
+  .AboutContainer {
+    padding: 1.5rem;
+  }
+}
+
+// max 720px
+@media (max-width: 45em) {
+  .AboutContainer {
+    flex-direction: column;
+    text-align: center;
+    height: fit-content;
+    padding-left: 2rem;
+    .skillsContainer {
+      width: 100%;
+      padding: 2rem 1rem;
+    }
+  }
+
+  .aboutTextBox {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
 }
 
 // Skills section

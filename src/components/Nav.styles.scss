@@ -12,6 +12,11 @@
   flex-direction: column;
   justify-content: space-between;
 
+  @media (max-width: 45em) {
+    .NavContainer {
+      font-size: 1.4rem;
+    }
+  }
   .nav {
     display: flex;
     flex-direction: column;
@@ -21,12 +26,8 @@
   }
 
   .gitHubLink {
-    background-color: #2ca58d;
     margin-bottom: 5rem;
-    border-radius: 1rem;
-    padding: 0.2rem 3rem;
     align-self: center;
-    box-shadow: 0.3rem 0.5rem 0.7rem #2e232e;
 
     &:hover {
       transform: translate(0.1rem, 0.2rem);

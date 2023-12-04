@@ -4,7 +4,7 @@ const Nav = () => {
   return (
     <div className="NavContainer">
       <div>
-        <div className="IntroText">
+        <div className="introText">
           <h1>Genevieve Anderson</h1>
           <p>Please call me Gen</p>
           <p>Welcome to my work profile</p>
@@ -24,7 +24,7 @@ const Nav = () => {
         target="_blank"
         rel="noreferrer"
       >
-        <img src="github.svg" alt="github icon" />
+        <img src="whiteGitHub.png" alt="github icon" />
       </a>
     </div>
   );

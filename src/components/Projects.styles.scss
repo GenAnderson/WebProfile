@@ -40,6 +40,25 @@
     }
   }
 
+  // Max width 1000px
+  @media (max-width: 63em) {
+    .card {
+      flex-direction: column;
+    }
+    .card-img {
+      align-self: center;
+    }
+  }
+
+  // Max width 640px
+  @media (max-width: 40em) {
+    .card {
+      .card-img {
+        width: 75%;
+      }
+    }
+  }
+
   .card-title {
     font-size: 1.6rem;
   }
@@ -55,6 +74,7 @@
   .cardLinks {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 1rem;
   }
   .card-link {
     border-radius: 0.5rem;

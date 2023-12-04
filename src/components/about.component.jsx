@@ -2,7 +2,7 @@ import "./about.styles.scss";
 
 const About = () => {
   return (
-    <div id="about" className="AboutContainer container-fluid g-0">
+    <div id="about" className="AboutContainer">
       <div className="skillsContainer row">
         <div className="skill-box col">
           <span className="title">HTML5</span>

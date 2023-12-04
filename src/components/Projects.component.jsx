@@ -27,10 +27,10 @@ const Projects = () => {
   });
 
   return (
-    <div id="projects" className="ProjectsContainer" container>
-      <Card ref={cardRef1} className={`${visible1 ? "shiftUp" : ""}`} row>
+    <div id="projects" className="ProjectsContainer container-fluid-md">
+      <Card ref={cardRef1} className={`${visible1 ? "shiftUp" : ""}`}>
         <Card.Img src="pokedex.png"></Card.Img>
-        <Card.Body container>
+        <Card.Body>
           <Card.Title>Pokedex</Card.Title>
 
           <Card.Text>
@@ -42,12 +42,17 @@ const Projects = () => {
           </Card.Text>
 
           <div class="cardLinks">
-            <Card.Link href="https://genanderson.github.io/pokedex/">
+            <Card.Link
+              href="https://genanderson.github.io/pokedex/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <u>Live link available</u>
             </Card.Link>
             <Card.Link
               href="https://github.com/GenAnderson/pokedex"
-              className="gitHubLink"
+              target="_blank"
+              rel="noreferrer"
             >
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
@@ -78,24 +83,28 @@ const Projects = () => {
             <Card.Link href="#projects">
               <u>No link available</u>
             </Card.Link>
-            <Card.Link href="https://github.com/GenAnderson/chat-demo">
+            <Card.Link
+              href="https://github.com/GenAnderson/chat-demo"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
           </div>
-          <Stack direction="horizontal" gap={2}>
-            <Badge pill bg="primary">
+          <Stack direction="horizontal" gap={2} className="row-auto">
+            <Badge pill bg="primary" className="col-xs-auto">
               JS
             </Badge>
-            <Badge pill bg="success">
+            <Badge pill bg="success" className="col-xs-auto">
               React Native
             </Badge>
-            <Badge pill bg="success">
+            <Badge pill bg="success" className="col-xs-auto">
               Node.js
             </Badge>
-            <Badge pill bg="secondary">
-              Firestore Database & Storage
+            <Badge pill bg="secondary" className="col-xs-auto">
+              Firestore
             </Badge>
-            <Badge pill bg="secondary">
+            <Badge pill bg="secondary" className="col-xs-auto">
               Expo
             </Badge>
           </Stack>
@@ -113,10 +122,18 @@ const Projects = () => {
             complemented by a back-end repository also accessible on my website.
           </Card.Text>
           <div class="cardLinks">
-            <Card.Link href="https://bestmovielist.netlify.app/login">
+            <Card.Link
+              href="https://bestmovielist.netlify.app/login"
+              target="_blank"
+              rel="noreferrer"
+            >
               <u>Live link available</u>
             </Card.Link>
-            <Card.Link href="https://github.com/GenAnderson/myFlix-client">
+            <Card.Link
+              href="https://github.com/GenAnderson/myFlix-client"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
           </div>
@@ -149,10 +166,18 @@ const Projects = () => {
             preferences stored within your profile.
           </Card.Text>
           <div class="cardLinks">
-            <Card.Link href="https://movieapi-yazx.onrender.com/documentation.html">
+            <Card.Link
+              href="https://movieapi-yazx.onrender.com/documentation.html"
+              target="_blank"
+              rel="noreferrer"
+            >
               <u>Documentation link available</u>
             </Card.Link>
-            <Card.Link href="https://github.com/GenAnderson/movieAPI">
+            <Card.Link
+              href="https://github.com/GenAnderson/movieAPI"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
           </div>
@@ -185,10 +210,18 @@ const Projects = () => {
             preferences or desired event quantity.
           </Card.Text>
           <div class="cardLinks">
-            <Card.Link href="https://genanderson.github.io/citymeet/">
+            <Card.Link
+              href="https://genanderson.github.io/citymeet/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <u>Live link available</u>
             </Card.Link>
-            <Card.Link href="https://github.com/GenAnderson/citymeet">
+            <Card.Link
+              href="https://github.com/GenAnderson/citymeet"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
           </div>
@@ -224,10 +257,18 @@ const Projects = () => {
             learning experience while honing skills.
           </Card.Text>
           <div class="cardLinks">
-            <Card.Link href="https://genanderson.github.io/myFlix-Angular/welcome">
+            <Card.Link
+              href="https://genanderson.github.io/myFlix-Angular/welcome"
+              target="_blank"
+              rel="noreferrer"
+            >
               <u>Live link available</u>
             </Card.Link>
-            <Card.Link href="https://github.com/GenAnderson/myFlix-Angular">
+            <Card.Link
+              href="https://github.com/GenAnderson/myFlix-Angular"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src="whiteGitHub.png" alt="github icon" />
             </Card.Link>
           </div>
