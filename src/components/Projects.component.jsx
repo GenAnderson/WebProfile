@@ -26,50 +26,82 @@ const Projects = () => {
     triggerOnce: true,
   });
 
+  const local = "http://localhost:3000/WebProfile/";
+
   return (
     <div id="projects" className="ProjectsContainer container-fluid-md">
       <Card ref={cardRef1} className={`${visible1 ? "shiftUp" : ""}`}>
-        <Card.Img src="pokedex.png"></Card.Img>
+        <Card.Img
+          src={local ? local + "kuponoacres.png" : "kuponoacres.png"}
+        ></Card.Img>
         <Card.Body>
-          <Card.Title>Pokedex</Card.Title>
+          <Card.Title>Kupono Acres</Card.Title>
 
           <Card.Text>
-            This app is a reimagined Pokédex, offering users the ability to
-            explore and access detailed information about different Pokémon.
-            Powered by an external API, it dynamically populates the app with
-            comprehensive data on these creatures. This project marks one of my
-            initial endeavors at Career Foundry, showcasing my early foray into
+            Kupono Acres specializes in cultivating and distribution microgreens
+            exclusively in Hawaii. Utilizing React, SCSS, and HTML, the site
+            implements media querying to provide a responsive design for use on
+            phones and tablets. It also invloves functional components and hooks
+            like useState, useEffect, useRef, and useContext for state
+            management.
           </Card.Text>
 
           <div class="cardLinks">
             <Card.Link
-              href="https://genanderson.github.io/pokedex/"
+              href="https://kuponoacres.com/"
               target="_blank"
               rel="noreferrer"
             >
-              <u>Live link available</u>
-            </Card.Link>
-            <Card.Link
-              href="https://github.com/GenAnderson/pokedex"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src="whiteGitHub.png" alt="github icon" />
+              <u>kuponoacres.com</u>
             </Card.Link>
           </div>
           <Stack direction="horizontal" gap={2} className="longBadges">
-            <Badge pill bg="primary">
-              JS
+            <Badge pill bg="danger">
+              SCSS
             </Badge>
-            <Badge pill bg="primary">
-              CSS
+            <Badge pill bg="success">
+              React
             </Badge>
           </Stack>
         </Card.Body>
       </Card>
 
       <Card ref={cardRef2} className={`${visible2 ? "shiftUp" : ""}`}>
-        <Card.Img src="Chatty.png"></Card.Img>
+        <Card.Img
+          src={local ? local + "rsinouye.png" : "rsinouye.png"}
+        ></Card.Img>
+        <Card.Body>
+          <Card.Title>Ralph Inouye Co., Ltd.</Card.Title>
+          <Card.Text>
+            Ralph Inouye is a General Contractor in Hawaii. Constructed with
+            HTML5 and vanilla Javascript, this application is a heavy hitter in
+            the SCSS department due to its diverse use of flex and CSS grid
+            functionalities. It includes a persistent navigation system coupled
+            with a slide-in menu, an automated slideshow feature, and selective
+            lazy loading for images.
+          </Card.Text>
+          <div class="cardLinks">
+            <Card.Link
+              href="https://www.rsinouye.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <u>rsinouye.com</u>
+            </Card.Link>
+          </div>
+          <Stack direction="horizontal" gap={2} className="longBadges">
+            <Badge pill bg="primary">
+              JS
+            </Badge>
+            <Badge pill bg="danger">
+              SCSS
+            </Badge>
+          </Stack>
+        </Card.Body>
+      </Card>
+
+      <Card ref={cardRef3} className={`${visible3 ? "shiftUp" : ""}`}>
+        <Card.Img src={local ? local + "Chatty.png" : "Chatty.png"}></Card.Img>
         <Card.Body>
           <Card.Title>Chatty</Card.Title>
           <Card.Text>
@@ -80,15 +112,15 @@ const Projects = () => {
             and libraries like React Native Maps and Gifted Chat.
           </Card.Text>
           <div class="cardLinks">
-            <Card.Link href="#projects">
-              <u>No link available</u>
-            </Card.Link>
             <Card.Link
               href="https://github.com/GenAnderson/chat-demo"
               target="_blank"
               rel="noreferrer"
             >
-              <img src="whiteGitHub.png" alt="github icon" />
+              <img
+                src={local ? local + "whiteGitHub.png" : "whiteGitHub.png"}
+                alt="github icon"
+              />
             </Card.Link>
           </div>
           <Stack direction="horizontal" gap={2} className="longBadges">
@@ -111,8 +143,10 @@ const Projects = () => {
         </Card.Body>
       </Card>
 
-      <Card ref={cardRef3} className={`${visible3 ? "shiftUp" : ""}`}>
-        <Card.Img src="MyFlix-client1.png"></Card.Img>
+      <Card ref={cardRef4} className={`${visible4 ? "shiftUp" : ""}`}>
+        <Card.Img
+          src={local ? local + "MyFlix-client1.png" : "MyFlix-client1.png"}
+        ></Card.Img>
         <Card.Body>
           <Card.Title>MyFlix-React</Card.Title>
           <Card.Text>
@@ -127,14 +161,17 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <u>Live link available</u>
+              <u>Live link</u>
             </Card.Link>
             <Card.Link
               href="https://github.com/GenAnderson/myFlix-client"
               target="_blank"
               rel="noreferrer"
             >
-              <img src="whiteGitHub.png" alt="github icon" />
+              <img
+                src={local ? local + "whiteGitHub.png" : "whiteGitHub.png"}
+                alt="github icon"
+              />
             </Card.Link>
           </div>
           <Stack direction="horizontal" gap={2} className="longBadges">
@@ -154,8 +191,10 @@ const Projects = () => {
         </Card.Body>
       </Card>
 
-      <Card ref={cardRef4} className={`${visible4 ? "shiftUp" : ""}`}>
-        <Card.Img src="MovieApp2.png"></Card.Img>
+      <Card ref={cardRef5} className={`${visible5 ? "shiftUp" : ""}`}>
+        <Card.Img
+          src={local ? local + "MovieApp2.png" : "MovieApp2.png"}
+        ></Card.Img>
         <Card.Body>
           <Card.Title>Movie API</Card.Title>
           <Card.Text>
@@ -178,7 +217,10 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src="whiteGitHub.png" alt="github icon" />
+              <img
+                src={local ? local + "whiteGitHub.png" : "whiteGitHub.png"}
+                alt="github icon"
+              />
             </Card.Link>
           </div>
           <Stack direction="horizontal" gap={2} className="longBadges">
@@ -199,7 +241,9 @@ const Projects = () => {
       </Card>
 
       <Card ref={cardRef5} className={`${visible5 ? "shiftUp" : ""}`}>
-        <Card.Img src="CityMeet.png"></Card.Img>
+        <Card.Img
+          src={local ? local + "CityMeet.png" : "CityMeet.png"}
+        ></Card.Img>
         <Card.Body>
           <Card.Title>CityMeet</Card.Title>
           <Card.Text>
@@ -211,18 +255,14 @@ const Projects = () => {
           </Card.Text>
           <div class="cardLinks">
             <Card.Link
-              href="https://genanderson.github.io/citymeet/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <u>Live link available</u>
-            </Card.Link>
-            <Card.Link
               href="https://github.com/GenAnderson/citymeet"
               target="_blank"
               rel="noreferrer"
             >
-              <img src="whiteGitHub.png" alt="github icon" />
+              <img
+                src={local ? local + "whiteGitHub.png" : "whiteGitHub.png"}
+                alt="github icon"
+              />
             </Card.Link>
           </div>
           <Stack direction="horizontal" gap={2} className="longBadges">
@@ -246,7 +286,9 @@ const Projects = () => {
       </Card>
 
       <Card ref={cardRef6} className={`${visible6 ? "shiftUp" : ""}`}>
-        <Card.Img src="MyFlix-angular1.png"></Card.Img>
+        <Card.Img
+          src={local ? local + "MyFlix-angular1.png" : "MyFlix-angular1.png"}
+        ></Card.Img>
         <Card.Body>
           <Card.Title>Myflix-Angular</Card.Title>
           <Card.Text>
@@ -262,14 +304,17 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <u>Live link available</u>
+              <u>Live link</u>
             </Card.Link>
             <Card.Link
               href="https://github.com/GenAnderson/myFlix-Angular"
               target="_blank"
               rel="noreferrer"
             >
-              <img src="whiteGitHub.png" alt="github icon" />
+              <img
+                src={local ? local + "whiteGitHub.png" : "whiteGitHub.png"}
+                alt="github icon"
+              />
             </Card.Link>
           </div>
           <Stack direction="horizontal" gap={2} className="longBadges">
