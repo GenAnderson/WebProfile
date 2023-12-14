@@ -26,7 +26,8 @@ const Projects = () => {
     triggerOnce: true,
   });
 
-  const local = "http://localhost:3000/WebProfile/";
+  // const local = "http://localhost:3000/WebProfile/";
+  const local = "";
 
   return (
     <div id="projects" className="ProjectsContainer container-fluid-md">
