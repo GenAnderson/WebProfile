@@ -1,0 +1,89 @@
+.contactFormContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #32493e;
+
+  padding: 5rem;
+
+  color: #001514;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  scale: 0;
+  z-index: -10;
+}
+
+.contactBG {
+  position: absolute;
+  filter: brightness(50%);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -11;
+  opacity: 0.5;
+}
+.contactOpacity {
+  opacity: 1;
+  scale: 1;
+  z-index: 0;
+
+  transition: 0.1s ease-in-out;
+}
+
+.form {
+  font-size: 3.6rem;
+  height: fit-content;
+  width: 60rem;
+  border-radius: 5rem;
+
+  padding: 2.4rem;
+  background-color: #d6e5e3;
+}
+
+label {
+  display: flex;
+  margin-top: 2rem;
+}
+.labelName {
+  width: 10rem;
+  text-align: left;
+}
+input {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.messageBox {
+  width: 100%;
+}
+.contactButtons {
+  display: flex;
+  gap: 20rem;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.backButton,
+.submitButton {
+  display: inline;
+  color: #d6e5e3;
+
+  // &:hover {
+  //   cursor: pointer;
+  //   scale: 1.1;
+  // }
+}
+
+// .submitButton {
+//   padding: 0.4rem 0.8rem;
+//   background-color: #001514;
+//   color: #d6e5e3;
+//   border: none;
+//   box-shadow: 0.1rem 0.2rem 0.5rem #001514;
+//   border-radius: 5rem;
+// }

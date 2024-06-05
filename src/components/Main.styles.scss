@@ -1,0 +1,56 @@
+.circle-one {
+  z-index: 10;
+  height: 85vh;
+  width: 85vh;
+  background-color: #32493e;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  overflow: hidden;
+  transition: ease-in-out 0.1s;
+
+  .main-container {
+    background-color: #d6e5e3;
+    width: 100%;
+    padding: 3rem;
+    text-align: center;
+
+    border-top: solid 0.2rem #001514;
+    border-bottom: solid 0.2rem #001514;
+  }
+
+  h1 {
+    font-size: 5.4rem;
+    font-weight: bold;
+  }
+
+  .contactMeButton {
+    margin-top: 2rem;
+    pointer-events: all;
+  }
+}
+
+.scrollDown {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+
+  color: #d6e5e3;
+  &__text {
+    font-size: 1.5rem;
+  }
+}
+
+/////////////////////////////MEDIA QUERY///////////////////////////
+//1920px (mid-size monitor)
+@media (max-width: 120em) {
+  .circle-one {
+    h1 {
+      font-size: 4.2rem;
+    }
+  }
+}

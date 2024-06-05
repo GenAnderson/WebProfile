@@ -1,99 +1,54 @@
-import "./about.styles.scss";
+import { motion } from "framer-motion";
 
-const About = () => {
+import "./About.styles.scss";
+
+const About = ({ currentPage }) => {
+  const motionUp = {
+    initial: {
+      x: "-50%",
+      y: "-50%",
+      rotate: 0,
+    },
+    move: {
+      x: ["-50%", "-50%", "-50%"],
+      y: ["-50%", "-130%", "-200%"],
+      rotate: [0, -55, -120],
+      transition: {
+        duration: 0.5,
+        ease: "linear",
+        times: [0, 0.2, 0.4, 1],
+      },
+    },
+  };
+
+  const appearAbout = {
+    initial: {
+      opacity: 0,
+      scale: 0.5,
+    },
+    appear: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.2,
+      },
+    },
+  };
+
   return (
-    <div id="about" className="AboutContainer">
-      <div className="skillsContainer row">
-        <div className="skill-box col">
-          <span className="title">HTML5</span>
-          <div className="skill-bar">
-            <span className="skill-per html">
-              <span className="testTooltip">95%</span>
-            </span>
-          </div>
-        </div>
-        <div className="skill-box col">
-          <span className="title">CSS</span>
-          <div className="skill-bar">
-            <span className="skill-per css">
-              <span className="testTooltip">95%</span>
-            </span>
-          </div>
-        </div>
-        <div className="skill-box col">
-          <span className="title">Javascript</span>
-          <div className="skill-bar">
-            <span className="skill-per javascript">
-              <span className="testTooltip">90%</span>
-            </span>
-          </div>
-        </div>
-        <div className="skill-box col">
-          <span className="title">SCSS</span>
-          <div className="skill-bar">
-            <span className="skill-per scss">
-              <span className="testTooltip">90%</span>
-            </span>
-          </div>
-        </div>
-        <div className="skill-box col">
-          <span className="title">React</span>
-          <div className="skill-bar">
-            <span className="skill-per react">
-              <span className="testTooltip">80%</span>
-            </span>
-          </div>
-        </div>
-        <div className="skill-box col">
-          <span className="title">NextJS</span>
-          <div className="skill-bar">
-            <span className="skill-per nextjs">
-              <span className="testTooltip">55%</span>
-            </span>
-          </div>
-        </div>
-        <div className="skill-box col">
-          <span className="title">NodeJS</span>
-          <div className="skill-bar">
-            <span className="skill-per nodejs">
-              <span className="testTooltip">55%</span>
-            </span>
-          </div>
-        </div>
-        <div className="skill-box col">
-          <span className="title">Typescript</span>
-          <div className="skill-bar">
-            <span className="skill-per typescript">
-              <span className="testTooltip">55%</span>
-            </span>
-          </div>
-        </div>
-        <div className="skill-box col">
-          <span className="title">MySQL</span>
-          <div className="skill-bar">
-            <span className="skill-per mysql">
-              <span className="testTooltip">50%</span>
-            </span>
-          </div>
-        </div>
-        <div className="skill-box col">
-          <span className="title">MongoDB</span>
-          <div className="skill-bar">
-            <span className="skill-per mongodb">
-              <span className="testTooltip">50%</span>
-            </span>
-          </div>
-        </div>
-        <div className="skill-box col">
-          <span className="title">Firebase</span>
-          <div className="skill-bar">
-            <span className="skill-per firebase">
-              <span className="testTooltip">45%</span>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="aboutTextBox">
+    <motion.div
+      className={`circle circle-two`}
+      initial="initial"
+      variants={motionUp}
+      animate={currentPage >= 3 ? "move" : ""}
+    >
+      <motion.div
+        className="about-container"
+        initial="initial"
+        variants={appearAbout}
+        animate={currentPage === 2 ? "appear" : ""}
+      >
+        <h2>About me</h2>
         <p>
           My journey started with self-directed learning back in 2021. I delved
           into various online courses and tutorials to grasp the fundamentals of
@@ -102,15 +57,11 @@ const About = () => {
           decided to fortify what I'd learned by enrolling in a boot camp. This
           immersive experience not only expanded my technical skills but also
           provided a deeper understanding of the intricacies within the coding
-          world.
-        </p>
-
-        <p>
-          I hope to one day have the opportunity to make my place in this
+          world. I hope to one day have the opportunity to make my place in this
           industry.
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

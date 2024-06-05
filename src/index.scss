@@ -1,5 +1,8 @@
-html {
+html,
+body {
   font-size: 62.5%;
+  font-family: "Oswald";
+  overflow-x: hidden;
 }
 
 @media (max-width: 60em) {
@@ -12,8 +15,4 @@ html {
   html {
     font-size: 58%;
   }
-}
-
-body {
-  font-family: "Oswald";
 }

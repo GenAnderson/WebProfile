@@ -1,0 +1,94 @@
+.opener {
+  position: relative;
+
+  height: 100vh;
+  width: 100vw;
+
+  font-size: 6.4rem;
+  color: #d6e5e3;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .panel {
+    width: 100%;
+    height: 100vh;
+    background-color: #001514;
+    transition: 1s ease-in-out;
+
+    &__left {
+      grid-column: -4/-3;
+      position: absolute;
+    }
+
+    &__middle {
+      grid-column: -3/-2;
+      position: absolute;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .scrollDown {
+        padding-bottom: 5rem;
+      }
+    }
+
+    &__right {
+      grid-column: -2/-1;
+      position: absolute;
+    }
+  }
+
+  .open-up {
+    transform: translate(0, -100%);
+  }
+
+  .open-down {
+    transform: translate(0, 100%);
+  }
+
+  .arrow-up {
+    position: absolute;
+    bottom: -100%;
+    opacity: 0;
+  }
+}
+.panel {
+  .openerHeading {
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+  }
+}
+
+.borderY {
+  position: absolute;
+  height: 100%;
+  width: 0.5rem;
+  background-color: #d6e5e3;
+}
+.rightabs {
+  right: 0;
+}
+
+.leftabs {
+  left: 0;
+}
+
+.borderX {
+  position: absolute;
+  width: 100%;
+  height: 0.5rem;
+  background-color: #d6e5e3;
+}
+
+.upabs {
+  top: 0;
+}
+.downabs {
+  bottom: 0;
+}
+.upabsGoLeft {
+  right: -100%;
+  top: 0;
+}

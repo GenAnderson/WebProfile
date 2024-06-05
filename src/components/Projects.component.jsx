@@ -1,338 +1,275 @@
+import kuponoMain from "../images/kuponoacres1.png";
+import kuponoMini from "../images/kuponoacres2.png";
+import kuponoLeaf from "../images/leaf.png";
+import rsi1 from "../images/rsi1.png";
+import rsi2 from "../images/rsi2.png";
+import rsi3 from "../images/rsi3.png";
+import rsiBG from "../images/rsiBG.jpg";
+import gear from "../images/gear.png";
+import smallGear from "../images/smallgear.png";
+import ProjectCard from "./ProjectCard.component";
+import projectsData from "./projectsData";
+
+import {
+  useKuponoLarge,
+  useRSILarge,
+  getRSIParams,
+  getSlidingParams,
+  getBGParams,
+} from "./utilities/motions.utils";
+import useScreenSize from "./utilities/screenSize.utils";
+import useGearAnimation from "./utilities/useGear.utils";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useState } from "react";
+import React from "react";
+
 import "./Projects.styles.scss";
-import { useInView } from "react-intersection-observer";
 
-// bootstrap
-import Card from "react-bootstrap/Card";
-import Badge from "react-bootstrap/Badge";
-import Stack from "react-bootstrap/Stack";
+const Projects = ({ currentPage, onNavigate }) => {
+  const [changeZ, setChangeZ] = useState(false);
+  const [scrolledUp, setScrolledUp] = useState(false);
+  const [wasZero, setWasZero] = useState(false);
+  const { scrollY } = useScroll();
+  const screenSize = useScreenSize();
 
-const Projects = () => {
-  const { ref: cardRef1, inView: visible1 } = useInView({
-    triggerOnce: true,
-  });
-  const { ref: cardRef2, inView: visible2 } = useInView({
-    triggerOnce: true,
-  });
-  const { ref: cardRef3, inView: visible3 } = useInView({
-    triggerOnce: true,
-  });
-  const { ref: cardRef4, inView: visible4 } = useInView({
-    triggerOnce: true,
-  });
-  const { ref: cardRef5, inView: visible5 } = useInView({
-    triggerOnce: true,
-  });
-  const { ref: cardRef6, inView: visible6 } = useInView({
-    triggerOnce: true,
-  });
+  // For up button back to 4th (opener) page
+  const handleUpClick = () => {
+    onNavigate(4);
+  };
 
-  // const local = "http://localhost:3000/WebProfile/";
-  const local = "";
+  // Changes projects z-index but allows page 4 exit animation
+  useEffect(() => {
+    if (currentPage === 5) {
+      const timer = setTimeout(() => {
+        setChangeZ(true);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else {
+      setChangeZ(false);
+    }
+  }, [currentPage]);
+
+  useEffect(() => {
+    const handleScroll = (latest) => {
+      // Log scrollY values for debugging
+      console.log("ScrollY value:", latest);
+
+      //For back button drop down
+      if (latest === 0) {
+        setScrolledUp(true);
+        setWasZero(true);
+      } else if (latest > 0 && wasZero) {
+        setScrolledUp(false);
+      }
+    };
+
+    scrollY.on("change", handleScroll);
+    return () => scrollY.clearListeners();
+  }, [scrollY, wasZero]);
+
+  // KUPONO MOTIONS
+  const kupTopline = useTransform(scrollY, [0, 100], ["0%", "100%"]);
+  const kupBottomline = useTransform(scrollY, [0, 100], ["0%", "-100%"]);
+  const kupMainX = useKuponoLarge(scrollY, [0, -100, -150, -250, -350]);
+  const kupMainY = useKuponoLarge(scrollY, [0, -200, -400, -600, -800]);
+  const kupMiniY = useKuponoLarge(scrollY, [0, -200, -500, -700, -900]);
+  const kupDescY = useKuponoLarge(scrollY, [0, -100, -200, -300, -400]);
+  const kupDescX = useKuponoLarge(scrollY, [0, 100, 150, 250, 300]);
+
+  // RSI MOTIONS
+  const rsiBGColor = getBGParams(screenSize);
+  const backgroundColor = useTransform(scrollY, rsiBGColor, [
+    "#f3f9d2",
+    "#d6e5e3",
+  ]);
+
+  const animationRSIParams = getRSIParams(screenSize);
+
+  const photoUp = useRSILarge(scrollY, ["0rem", "-40rem", "-80rem"]);
+  const photoGoRight = useRSILarge(scrollY, ["0rem", "5rem", "10rem"]);
+  const photoGoLeft = useRSILarge(scrollY, ["0rem", "-5rem", "-10rem"]);
+
+  const opacity = useTransform(
+    scrollY,
+    animationRSIParams.opacityRange,
+    [0, 1]
+  );
+  const scale = useTransform(scrollY, animationRSIParams.scaleRange, [0.1, 1]);
+  const zIndex = useTransform(scrollY, animationRSIParams.zIndexRange, [-1, 0]);
+  const rsiMidLeft = useTransform(scrollY, animationRSIParams.rsiMidLeftRange, [
+    "0%",
+    "100%",
+  ]);
+  const rsiMidRight = useTransform(
+    scrollY,
+    animationRSIParams.rsiMidRightRange,
+    ["0%", "-100%"]
+  );
+
+  //OTHER PROJECTS MOTIONS
+  const otherProjectsParams = getSlidingParams(screenSize);
+  const xTransform = useTransform(scrollY, otherProjectsParams, ["0%", "-33%"]);
+  const { gearOne, gearTwo } = useGearAnimation(scrollY);
 
   return (
-    <div id="projects" className="ProjectsContainer container-fluid-md">
-      <Card ref={cardRef1} className={`${visible1 ? "shiftUp" : ""}`}>
-        <Card.Img
-          src={local ? local + "kuponoacres.png" : "kuponoacres.png"}
-        ></Card.Img>
-        <Card.Body>
-          <Card.Title>Kupono Acres</Card.Title>
-
-          <Card.Text>
-            Kupono Acres specializes in cultivating and distribution microgreens
-            exclusively in Hawaii. Utilizing React, SCSS, and HTML, the site
-            implements media querying to provide a responsive design for use on
-            phones and tablets. It also invloves functional components and hooks
-            like useState, useEffect, useRef, and useContext for state
-            management.
-          </Card.Text>
-
-          <div class="cardLinks">
-            <Card.Link
-              href="https://kuponoacres.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <u>kuponoacres.com</u>
-            </Card.Link>
+    <motion.div
+      className={`projects-container ${currentPage >= 5 ? "hidevhvw" : ""} ${
+        changeZ ? "changeZup" : ""
+      }`}
+      style={{ backgroundColor }}
+    >
+      {scrolledUp && (
+        <motion.div
+          className="backUpButton"
+          animate={{ y: "100%" }}
+          onClick={() => {
+            handleUpClick();
+          }}
+        >
+          ▲
+        </motion.div>
+      )}
+      <div className="kuponoContainer">
+        <motion.img
+          src={kuponoLeaf}
+          alt="leaf outline"
+          className="kuponoLeaf"
+          style={{ x: kupBottomline }}
+        ></motion.img>
+        <motion.div
+          className="line line__upperRight"
+          style={{ x: kupTopline }}
+        ></motion.div>
+        <div className="kupono">
+          <div className="imageContainer">
+            <motion.img
+              src={kuponoMain}
+              alt="kupono website"
+              className="kuponoSiteMain"
+              style={{ x: kupMainX, y: kupMainY }}
+            ></motion.img>
+            <motion.img
+              src={kuponoMini}
+              alt="kupono website cart"
+              className="kuponoSiteMini"
+              style={{ y: kupMiniY }}
+            ></motion.img>
           </div>
-          <Stack direction="horizontal" gap={2} className="longBadges">
-            <Badge pill bg="danger">
-              SCSS
-            </Badge>
-            <Badge pill bg="success">
-              React
-            </Badge>
-          </Stack>
-        </Card.Body>
-      </Card>
+          <motion.div
+            className="kuponoDescContainer"
+            style={{ x: kupDescX, y: kupDescY }}
+          >
+            <h3>
+              <a
+                className="project-header"
+                href={"https://kuponoacres.com"}
+                target="_blank"
+                rel="noreferrer"
+              >
+                KUPONO ACRES →
+              </a>
+            </h3>
+            <p className="kuponoDesc">
+              Kupono Acres specializes in cultivating and distribution
+              microgreens exclusively in Hawaii. Utilizing React and SCSS, the
+              site implements media querying to provide a responsive design for
+              use on phones and tablets. It also involves functional components
+              and typical hooks such as useState, useEffect, useRef and
+              useContext for cart management.
+            </p>
+          </motion.div>
+        </div>
+        <motion.div
+          className="line line__lowerLeft"
+          style={{ x: kupBottomline }}
+        ></motion.div>
+      </div>
 
-      <Card ref={cardRef2} className={`${visible2 ? "shiftUp" : ""}`}>
-        <Card.Img
-          src={local ? local + "rsinouye.png" : "rsinouye.png"}
-        ></Card.Img>
-        <Card.Body>
-          <Card.Title>Ralph Inouye Co., Ltd.</Card.Title>
-          <Card.Text>
-            Ralph Inouye is a General Contractor in Hawaii. Constructed with
-            HTML5 and vanilla Javascript, this application is a heavy hitter in
-            the SCSS department due to its diverse use of flex and CSS grid
-            functionalities. It includes a persistent navigation system coupled
-            with a slide-in menu, an automated slideshow feature, and selective
-            lazy loading for images.
-          </Card.Text>
-          <div class="cardLinks">
-            <Card.Link
-              href="https://www.rsinouye.com/"
+      <div className="rsi">
+        <div className="rsi-gridGallery">
+          <motion.img
+            src={rsi1}
+            alt="rsi website pic1"
+            className="rsi-gridPic side"
+            style={{ y: photoUp, x: photoGoRight }}
+          />
+          <motion.img
+            src={rsi3}
+            alt="rsi website mobile"
+            className="rsi-gridPic middle"
+            style={{ y: photoUp }}
+          />
+          <motion.img
+            src={rsi2}
+            alt="rsi website pic2"
+            className="rsi-gridPic side"
+            style={{ y: photoUp, x: photoGoLeft }}
+          />
+        </div>
+        <motion.div
+          className="line line__midLeft"
+          style={{ x: rsiMidLeft }}
+        ></motion.div>
+        <motion.div
+          className="line line__midRight"
+          style={{ x: rsiMidRight }}
+        ></motion.div>
+        <motion.div className="rsi-desc" style={{ opacity, scale, zIndex }}>
+          <h3 className="project-header-container">
+            <a
+              className="project-header"
+              href="https://genanderson.github.io/rsi-react/"
               target="_blank"
               rel="noreferrer"
             >
-              <u>rsinouye.com</u>
-            </Card.Link>
-          </div>
-          <Stack direction="horizontal" gap={2} className="longBadges">
-            <Badge pill bg="primary">
-              JS
-            </Badge>
-            <Badge pill bg="danger">
-              SCSS
-            </Badge>
-          </Stack>
-        </Card.Body>
-      </Card>
+              RALPH S. INOUYE CO., LTD →
+            </a>
+          </h3>
+          <p>
+            Developed using ReactJS, this website leverages the Framer Motion
+            library to deliver a seamless and dynamic user experience. By
+            integrating sticky positioning and sophisticated animations, the
+            application provides an engaging and informative interface. The site
+            is currently in a pre-launch phase awaiting the owners to finalize
+            additional content. If you'd like to see the initial site developed
+            for RSI a year ago, see below in the other notable projects section.
+          </p>
+        </motion.div>
+        <img src={rsiBG} alt="construction background" className="rsiBG"></img>
+      </div>
 
-      <Card ref={cardRef3} className={`${visible3 ? "shiftUp" : ""}`}>
-        <Card.Img src={local ? local + "Chatty.png" : "Chatty.png"}></Card.Img>
-        <Card.Body>
-          <Card.Title>Chatty</Card.Title>
-          <Card.Text>
-            Chatty is a messaging app that enables photo sharing and location
-            sharing. Seamlessly optimized for Android and iOS, it leverages
-            Firebase Storage & Authentication for secure, anonymous sign-ins.
-            Created with React Native, this app incorporates a number of tools
-            and libraries like React Native Maps and Gifted Chat.
-          </Card.Text>
-          <div class="cardLinks">
-            <Card.Link
-              href="https://github.com/GenAnderson/chat-demo"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={local ? local + "whiteGitHub.png" : "whiteGitHub.png"}
-                alt="github icon"
-              />
-            </Card.Link>
-          </div>
-          <Stack direction="horizontal" gap={2} className="longBadges">
-            <Badge pill bg="primary">
-              JS
-            </Badge>
-            <Badge pill bg="success">
-              React Native
-            </Badge>
-            <Badge pill bg="success">
-              Node.js
-            </Badge>
-            <Badge pill bg="secondary">
-              Firestore
-            </Badge>
-            <Badge pill bg="secondary">
-              Expo
-            </Badge>
-          </Stack>
-        </Card.Body>
-      </Card>
+      <div className="otherProjects">
+        <motion.img
+          src={gear}
+          alt="gear icon large"
+          className="largeGear"
+          initial={{ rotate: 0 }}
+          animate={gearOne}
+          transition={{ duration: 0.4 }}
+        ></motion.img>
+        <motion.img
+          src={smallGear}
+          alt="gear icon small"
+          className="smallGear"
+          initial={{ rotate: 0 }}
+          animate={gearTwo}
+          transition={{ duration: 0.4 }}
+        ></motion.img>
 
-      <Card ref={cardRef4} className={`${visible4 ? "shiftUp" : ""}`}>
-        <Card.Img
-          src={local ? local + "MyFlix-client1.png" : "MyFlix-client1.png"}
-        ></Card.Img>
-        <Card.Body>
-          <Card.Title>MyFlix-React</Card.Title>
-          <Card.Text>
-            Join MyFlix by registering, signing in, and immediately begin
-            creating your list of favorite movies. Create with React, this
-            application serves as the front-end for an overall movie project,
-            complemented by a back-end repository also accessible on my website.
-          </Card.Text>
-          <div class="cardLinks">
-            <Card.Link
-              href="https://bestmovielist.netlify.app/login"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <u>Live link</u>
-            </Card.Link>
-            <Card.Link
-              href="https://github.com/GenAnderson/myFlix-client"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={local ? local + "whiteGitHub.png" : "whiteGitHub.png"}
-                alt="github icon"
-              />
-            </Card.Link>
-          </div>
-          <Stack direction="horizontal" gap={2} className="longBadges">
-            <Badge pill bg="primary">
-              JS
-            </Badge>
-            <Badge pill bg="danger">
-              SCSS
-            </Badge>
-            <Badge pill bg="success">
-              React
-            </Badge>
-            <Badge pill bg="light" text="dark">
-              Bootstrap
-            </Badge>
-          </Stack>
-        </Card.Body>
-      </Card>
-
-      <Card ref={cardRef5} className={`${visible5 ? "shiftUp" : ""}`}>
-        <Card.Img
-          src={local ? local + "MovieApp2.png" : "MovieApp2.png"}
-        ></Card.Img>
-        <Card.Body>
-          <Card.Title>Movie API</Card.Title>
-          <Card.Text>
-            This robust REST API functions as the backbone for my front-end
-            clients, catering to both the Angular and React versions of MyFlix
-            applications. Leveraging the power of MongoDB, this API seamlessly
-            handles the retrieval and updating of your personalized movie
-            preferences stored within your profile.
-          </Card.Text>
-          <div class="cardLinks">
-            <Card.Link
-              href="https://movieapi-yazx.onrender.com/documentation.html"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <u>Documentation link available</u>
-            </Card.Link>
-            <Card.Link
-              href="https://github.com/GenAnderson/movieAPI"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={local ? local + "whiteGitHub.png" : "whiteGitHub.png"}
-                alt="github icon"
-              />
-            </Card.Link>
-          </div>
-          <Stack direction="horizontal" gap={2} className="longBadges">
-            <Badge pill bg="success">
-              React
-            </Badge>
-            <Badge pill bg="success">
-              Node.js
-            </Badge>
-            <Badge pill bg="light" text="dark">
-              Express
-            </Badge>
-            <Badge pill bg="secondary">
-              MongoDB
-            </Badge>
-          </Stack>
-        </Card.Body>
-      </Card>
-
-      <Card ref={cardRef5} className={`${visible5 ? "shiftUp" : ""}`}>
-        <Card.Img
-          src={local ? local + "CityMeet.png" : "CityMeet.png"}
-        ></Card.Img>
-        <Card.Body>
-          <Card.Title>CityMeet</Card.Title>
-          <Card.Text>
-            CityMeet is a dynamic platform designed to curate and showcase an
-            array of events within your chosen city, sourcing the information
-            through the Google Calendar API. It offers users the flexibility to
-            tailor their event exploration by applying filters based on city
-            preferences or desired event quantity.
-          </Card.Text>
-          <div class="cardLinks">
-            <Card.Link
-              href="https://github.com/GenAnderson/citymeet"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={local ? local + "whiteGitHub.png" : "whiteGitHub.png"}
-                alt="github icon"
-              />
-            </Card.Link>
-          </div>
-          <Stack direction="horizontal" gap={2} className="longBadges">
-            <Badge pill bg="primary">
-              JS
-            </Badge>
-            <Badge pill bg="success">
-              React
-            </Badge>
-            <Badge pill bg="light" text="dark">
-              Bootstrap
-            </Badge>
-            <Badge pill bg="secondary">
-              Jest
-            </Badge>
-            <Badge pill bg="secondary">
-              Cucumber
-            </Badge>
-          </Stack>
-        </Card.Body>
-      </Card>
-
-      <Card ref={cardRef6} className={`${visible6 ? "shiftUp" : ""}`}>
-        <Card.Img
-          src={local ? local + "MyFlix-angular1.png" : "MyFlix-angular1.png"}
-        ></Card.Img>
-        <Card.Body>
-          <Card.Title>Myflix-Angular</Card.Title>
-          <Card.Text>
-            The development of this iteration of MyFlix used Angular. Similar to
-            its React counterpart, this rendition seamlessly integrates with my
-            backend movie API. Crafting this version served as an invaluable
-            opportunity to delve deeper into Angular and provided a hands-on
-            learning experience while honing skills.
-          </Card.Text>
-          <div class="cardLinks">
-            <Card.Link
-              href="https://genanderson.github.io/myFlix-Angular/welcome"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <u>Live link</u>
-            </Card.Link>
-            <Card.Link
-              href="https://github.com/GenAnderson/myFlix-Angular"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={local ? local + "whiteGitHub.png" : "whiteGitHub.png"}
-                alt="github icon"
-              />
-            </Card.Link>
-          </div>
-          <Stack direction="horizontal" gap={2} className="longBadges">
-            <Badge pill bg="primary">
-              Typescript
-            </Badge>
-            <Badge pill bg="success">
-              Angular
-            </Badge>
-            <Badge pill bg="danger">
-              SCSS
-            </Badge>
-          </Stack>
-        </Card.Body>
-      </Card>
-    </div>
+        <div className="overFlowContainer">
+          <motion.div
+            className="cardFlexContainer"
+            style={{ x: xTransform }}
+            transition={{ type: "tween", ease: "linear" }}
+          >
+            {projectsData.map((project) => (
+              <ProjectCard key={project.id} project={project}></ProjectCard>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
   );
 };
-
 export default Projects;
