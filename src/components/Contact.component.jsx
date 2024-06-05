@@ -1,22 +1,45 @@
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import contactBG from "../images/mail.jpg";
+import emailjs from "@emailjs/browser";
 
 import "./Contact.styles.scss";
 
 const Contact = ({ opacity, contactHandler }) => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_7odam6k", "template_f64gxgs", form.current, {
+        publicKey: "f7ubLR15pkBC2Sece",
+      })
+      .then(
+        () => {
+          alert("Thanks!");
+          form.current.reset();
+          contactHandler();
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <motion.div
       className={`contactFormContainer ${opacity ? "contactOpacity" : ""}`}
     >
       <img src={contactBG} alt="mail" className="contactBG"></img>
-      <form className="form">
+      <form className="form" onSubmit={sendEmail} ref={form}>
         <label>
           <p className="labelName">Name</p>
-          <input type="text" required></input>
+          <input type="text" required name="name"></input>
         </label>
         <label>
           <p className="labelName">Email</p>
-          <input type="text" required></input>
+          <input type="email" required name="Email"></input>
         </label>
         <label>
           <p className="labelName">Message</p>
@@ -24,6 +47,7 @@ const Contact = ({ opacity, contactHandler }) => {
             type="textarea"
             className="messageBox"
             rows={6}
+            name="message"
             required
           ></textarea>
         </label>

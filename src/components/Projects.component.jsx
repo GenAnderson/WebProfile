@@ -143,18 +143,30 @@ const Projects = ({ currentPage, onNavigate }) => {
         ></motion.div>
         <div className="kupono">
           <div className="imageContainer">
-            <motion.img
-              src={kuponoMain}
-              alt="kupono website"
-              className="kuponoSiteMain"
-              style={{ x: kupMainX, y: kupMainY }}
-            ></motion.img>
-            <motion.img
-              src={kuponoMini}
-              alt="kupono website cart"
-              className="kuponoSiteMini"
-              style={{ y: kupMiniY }}
-            ></motion.img>
+            <a
+              href={"https://kuponoacres.com"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <motion.img
+                src={kuponoMain}
+                alt="kupono website"
+                className="kuponoSiteMain"
+                style={{ x: kupMainX, y: kupMainY }}
+              ></motion.img>
+            </a>
+            <a
+              href={"https://kuponoacres.com"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <motion.img
+                src={kuponoMini}
+                alt="kupono website cart"
+                className="kuponoSiteMini"
+                style={{ y: kupMiniY }}
+              ></motion.img>
+            </a>
           </div>
           <motion.div
             className="kuponoDescContainer"
@@ -188,24 +200,42 @@ const Projects = ({ currentPage, onNavigate }) => {
 
       <div className="rsi">
         <div className="rsi-gridGallery">
-          <motion.img
-            src={rsi1}
-            alt="rsi website pic1"
-            className="rsi-gridPic side"
-            style={{ y: photoUp, x: photoGoRight }}
-          />
-          <motion.img
-            src={rsi3}
-            alt="rsi website mobile"
-            className="rsi-gridPic middle"
-            style={{ y: photoUp }}
-          />
-          <motion.img
-            src={rsi2}
-            alt="rsi website pic2"
-            className="rsi-gridPic side"
-            style={{ y: photoUp, x: photoGoLeft }}
-          />
+          <a
+            href="https://genanderson.github.io/rsi-react/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <motion.img
+              src={rsi1}
+              alt="rsi website pic1"
+              className="rsi-gridPic side"
+              style={{ y: photoUp, x: photoGoRight }}
+            />
+          </a>
+          <a
+            href="https://genanderson.github.io/rsi-react/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <motion.img
+              src={rsi3}
+              alt="rsi website mobile"
+              className="rsi-gridPic middle"
+              style={{ y: photoUp }}
+            />
+          </a>
+          <a
+            href="https://genanderson.github.io/rsi-react/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <motion.img
+              src={rsi2}
+              alt="rsi website pic2"
+              className="rsi-gridPic side"
+              style={{ y: photoUp, x: photoGoLeft }}
+            />
+          </a>
         </div>
         <motion.div
           className="line line__midLeft"
