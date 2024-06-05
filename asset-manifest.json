@@ -1,13 +1,31 @@
 {
   "files": {
-    "main.css": "./static/css/main.071ee562.css",
-    "main.js": "./static/js/main.8d0f102a.js",
+    "main.css": "./static/css/main.413b833a.css",
+    "main.js": "./static/js/main.e5625bf0.js",
+    "static/media/rsiOriginal.png": "./static/media/rsiOriginal.d242468a992cdc968a1f.png",
+    "static/media/kuponoacres1.png": "./static/media/kuponoacres1.d8d9aacf773848d5e95e.png",
+    "static/media/rsiBG.jpg": "./static/media/rsiBG.41a6c5efe8731ba657e4.jpg",
+    "static/media/mail.jpg": "./static/media/mail.6c4eaa365ff4eaf47494.jpg",
+    "static/media/rsi1.png": "./static/media/rsi1.7377c88eec9f133a5591.png",
+    "static/media/MyFlix-client1.png": "./static/media/MyFlix-client1.d0f95776e6969b8f98e8.png",
+    "static/media/keyboardBG.jpg": "./static/media/keyboardBG.11924505f5c7699bff79.jpg",
+    "static/media/rsi2.png": "./static/media/rsi2.30bf13860c016bb14709.png",
+    "static/media/rsi3.png": "./static/media/rsi3.042637c0874dc5cda7e6.png",
+    "static/media/Chatty.png": "./static/media/Chatty.b60abfe67886b80c66d8.png",
+    "static/media/MyFlix-angular1.png": "./static/media/MyFlix-angular1.ad69531102a184e09928.png",
+    "static/media/leaf.png": "./static/media/leaf.b6d58ecc5e403bcf3244.png",
+    "static/media/MovieApp2.png": "./static/media/MovieApp2.d7bc3d7ec3191f97e74a.png",
+    "static/media/aboutBG.JPG": "./static/media/aboutBG.1c09f14dd544dd493000.JPG",
+    "static/media/CityMeet.png": "./static/media/CityMeet.9c565582ed9744ce8da9.png",
+    "static/media/smallgear.png": "./static/media/smallgear.011962eab118e5ee2dbb.png",
+    "static/media/kuponoacres2.png": "./static/media/kuponoacres2.4d21453ead096ee7bcfd.png",
+    "static/media/gear.png": "./static/media/gear.1e6899ed839b3f8a0194.png",
     "index.html": "./index.html",
-    "main.071ee562.css.map": "./static/css/main.071ee562.css.map",
-    "main.8d0f102a.js.map": "./static/js/main.8d0f102a.js.map"
+    "main.413b833a.css.map": "./static/css/main.413b833a.css.map",
+    "main.e5625bf0.js.map": "./static/js/main.e5625bf0.js.map"
   },
   "entrypoints": [
-    "static/css/main.071ee562.css",
-    "static/js/main.8d0f102a.js"
+    "static/css/main.413b833a.css",
+    "static/js/main.e5625bf0.js"
   ]
 }
