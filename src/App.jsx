@@ -2,7 +2,7 @@ import Main from "./components/Main.component.jsx";
 import About from "./components/About.component.jsx";
 import Skills from "./components/Skills.component.jsx";
 import Opener from "./components/Opener.component.jsx";
-import Projects from "./components/Projects.component.jsx";
+import Projects from "./components/projects/Projects.component.jsx";
 
 import { useState } from "react";
 

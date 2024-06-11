@@ -1,76 +1,77 @@
 import { useTransform } from "framer-motion";
 
-export const useKuponoLarge = (scrollY, values) => {
+export const useKupono = (scrollY, values) => {
   return useTransform(scrollY, [0, 100, 200, 300, 400], values);
 };
 
-export const useRSILarge = (scrollY, values) => {
-  return useTransform(scrollY, [0, 200, 600], values);
-};
-
 /////////////////MEDIA QUERY////////////////////
-export const getRSIParams = (screenSize) => {
+
+// export const getSlidingParams = (screenSize) => {
+//   switch (screenSize) {
+//     case "large":
+//       return [1450, 1700];
+//     case "medium":
+//       return [1150, 1200];
+//     case "small":
+//       return [800, 1000];
+//     case "extraSmall":
+//     default:
+//       return [500, 700];
+//   }
+// };
+
+// export const getBGParams = (screenSize) => {
+//   switch (screenSize) {
+//     case "large":
+//       return [350, 450];
+//     case "medium":
+//       return [200, 300];
+//     case "small":
+//       return [200, 300];
+//     case "extraSmall":
+//     default:
+//       return [100, 200];
+//   }
+// };
+
+export const getRSIpicParams = (screenSize) => {
   switch (screenSize) {
     case "large":
-      return {
-        opacityRange: [400, 500],
-        scaleRange: [400, 500],
-        zIndexRange: [400, 500],
-        rsiMidLeftRange: [400, 500],
-        rsiMidRightRange: [400, 500],
-      };
+      return [0, 200, 600];
     case "medium":
-      return {
-        opacityRange: [300, 400],
-        scaleRange: [300, 400],
-        zIndexRange: [300, 400],
-        rsiMidLeftRange: [300, 400],
-        rsiMidRightRange: [300, 400],
-      };
+      return [0, 200, 300];
     case "small":
-      return {
-        opacityRange: [200, 300],
-        scaleRange: [200, 300],
-        zIndexRange: [200, 300],
-        rsiMidLeftRange: [200, 300],
-        rsiMidRightRange: [200, 300],
-      };
+      return [0, 200, 800];
     case "extraSmall":
     default:
-      return {
-        opacityRange: [100, 200],
-        scaleRange: [100, 200],
-        zIndexRange: [100, 200],
-        rsiMidLeftRange: [100, 200],
-        rsiMidRightRange: [100, 200],
-      };
+      return [0, 200, 600];
   }
 };
 
-export const getSlidingParams = (screenSize) => {
+export const getRSIPhotoUpValues = (screenSize) => {
   switch (screenSize) {
     case "large":
-      return [1450, 1700];
+      return ["0rem", "-70rem"];
     case "medium":
-      return [1150, 1300];
+      return ["0rem", "-55rem"];
     case "small":
-      return [800, 1000];
+      return ["0rem", "-20rem"];
     case "extraSmall":
     default:
-      return [500, 700];
+      return ["0rem", "-10rem"];
   }
 };
 
-export const getBGParams = (screenSize) => {
-  switch (screenSize) {
-    case "large":
-      return [400, 500];
-    case "medium":
-      return [300, 400];
-    case "small":
-      return [200, 300];
-    case "extraSmall":
-    default:
-      return [100, 200];
-  }
-};
+// export const getSlidingValues = (screenSize) => {
+//   switch (screenSize) {
+//     case "large":
+//       return ["0%", "-33%"];
+//     case "medium":
+//       return ["0%", "-33%"];
+//     case "small":
+//       return ["0%", "-99%"];
+//     case "extraSmall":
+//     default:
+//       return ["0%", "-33%"];
+//   }
+// };

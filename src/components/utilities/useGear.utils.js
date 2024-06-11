@@ -1,6 +1,6 @@
 import { useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import useScreenSize from "./screenSize.utils";
+import { useScreenSize } from "./screenSize.utils";
 
 const useGearAnimation = (scrollY) => {
   const gearOne = useAnimation();

@@ -1,0 +1,75 @@
+.otherProjects {
+  width: 100vw;
+  height: 100vh;
+  padding: 10rem 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  background-color: #d6e5e3;
+  z-index: -1;
+}
+
+.largeGear {
+  width: 150rem;
+  height: 150rem;
+  position: absolute;
+  bottom: -50%;
+  left: -10%;
+  z-index: -2;
+}
+
+.smallGear {
+  width: 100rem;
+  height: 100rem;
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  z-index: -2;
+}
+
+.overFlowContainer {
+  //equals only visible card width
+  overflow-x: hidden;
+  width: 170rem;
+  margin-top: -10rem;
+  background-color: #d6e5e3;
+  box-shadow: 0.4rem 0.4rem 0.4rem #001514;
+  border: #001514 0.5rem solid;
+}
+
+.cardFlexContainer {
+  //equals total cards width
+  display: flex;
+  width: fit-content;
+  height: 64rem;
+}
+
+////////////////////////////////MEDIA QUERY//////////////////////////////////
+//1920px (mid-size screen)
+@media (max-width: 120em) {
+  .projects-container {
+    p {
+      font-size: 1.4rem;
+    }
+  }
+
+  .otherProjects {
+    padding: 10rem 10rem 0rem 10rem;
+  }
+  .largeGear {
+    width: 100rem;
+    height: 100rem;
+  }
+  .smallGear {
+    width: 60rem;
+    height: 60rem;
+  }
+
+  .cardFlexContainer {
+    height: 44rem;
+  }
+}
+
+//1744px

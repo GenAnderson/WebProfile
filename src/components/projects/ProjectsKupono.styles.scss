@@ -1,0 +1,100 @@
+.kuponoContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.kupono {
+  padding: 0 5rem;
+  height: 50vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-self: center;
+}
+
+.kuponoLeaf {
+  position: absolute;
+  top: 0;
+  right: -5%;
+  z-index: -1;
+  rotate: -180deg;
+  opacity: 1;
+}
+
+.imageContainer {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+}
+
+.kuponoSiteMain {
+  position: absolute;
+  left: 0;
+  object-fit: contain;
+  height: 100%;
+  width: auto;
+  box-shadow: 0.1rem 0.2rem 0.3rem #111;
+}
+.kuponoSiteMini {
+  box-shadow: 0.1rem 0.2rem 0.3rem #111;
+  width: 40rem;
+  position: absolute;
+  bottom: -15%;
+  right: -130%;
+}
+.kuponoDescContainer {
+  color: #d6e5e3;
+  padding: 10rem;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    z-index: -1;
+    width: 300%;
+    height: 60%;
+    background: #32493ef8;
+    top: 3rem;
+    right: -30%;
+    position: absolute;
+  }
+}
+
+.kuponoDesc {
+  grid-column: 2 / 3;
+  padding: 5rem;
+}
+
+////////////////////////////////MEDIA QUERY//////////////////////////////////
+//1920px (mid-size screen)
+@media (max-width: 120em) {
+  .kuponoDescContainer {
+    padding: 10rem 5rem 5rem 10rem;
+    text-align: right;
+  }
+
+  .kuponoDesc {
+    padding: 2rem 0rem 5rem 8rem;
+  }
+
+  .kuponoSiteMini {
+    right: -145%;
+  }
+}
+
+//1744px
+@media (max-width: 109em) {
+  .kupono {
+    padding: 0 3rem;
+  }
+  .kuponoDescContainer {
+    padding: 10rem 0rem 4rem 10rem;
+  }
+}
