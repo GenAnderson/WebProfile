@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.07231c62.css",
-    "main.js": "./static/js/main.fc8747fd.js",
+    "main.css": "./static/css/main.1cd8406a.css",
+    "main.js": "./static/js/main.c5f5612f.js",
     "static/media/rsiOriginal.png": "./static/media/rsiOriginal.d242468a992cdc968a1f.png",
     "static/media/kuponoacres1.png": "./static/media/kuponoacres1.d8d9aacf773848d5e95e.png",
     "static/media/rsiBG.jpg": "./static/media/rsiBG.41a6c5efe8731ba657e4.jpg",
@@ -21,11 +21,11 @@
     "static/media/kuponoacres2.png": "./static/media/kuponoacres2.4d21453ead096ee7bcfd.png",
     "static/media/gear.png": "./static/media/gear.1e6899ed839b3f8a0194.png",
     "index.html": "./index.html",
-    "main.07231c62.css.map": "./static/css/main.07231c62.css.map",
-    "main.fc8747fd.js.map": "./static/js/main.fc8747fd.js.map"
+    "main.1cd8406a.css.map": "./static/css/main.1cd8406a.css.map",
+    "main.c5f5612f.js.map": "./static/js/main.c5f5612f.js.map"
   },
   "entrypoints": [
-    "static/css/main.07231c62.css",
-    "static/js/main.fc8747fd.js"
+    "static/css/main.1cd8406a.css",
+    "static/js/main.c5f5612f.js"
   ]
 }
