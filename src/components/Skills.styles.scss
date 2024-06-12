@@ -32,6 +32,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
     justify-items: center;
+    align-self: center;
   }
 
   .skillsBG {
@@ -81,6 +82,27 @@
     img {
       height: 4rem;
       width: 4rem;
+    }
+  }
+}
+
+////////////////////////////////MEDIA QUERY//////////////////////////////////
+//1326px
+@media (max-width: 78em) {
+  .circle-three {
+    .icon-container {
+      padding: 1rem;
+      margin: 0;
+    }
+
+    .icon-imageContainer {
+      height: 5rem;
+      width: 5rem;
+
+      img {
+        height: 3rem;
+        width: 3rem;
+      }
     }
   }
 }

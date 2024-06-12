@@ -81,52 +81,9 @@
   }
 }
 
-////////////////////////////////MEDIA QUERY//////////////////////////////////
-
-//1568px
-@media (max-width: 98em) {
-  .kuponoLeaf {
-    height: 100%;
-  }
-  .imageContainer {
-    height: 85%;
-  }
-  .kuponoSiteMini {
-    width: 25rem;
-  }
-
-  .sidePicAnchor {
-    display: flex;
-  }
-
-  .side {
-    align-self: flex-end;
-    height: 50%;
-    margin: 1rem 1rem 10rem 1rem;
-  }
-
-  .rsi {
-    height: 44vh;
-  }
-
-  .projectCard {
-    padding: 1rem;
-    min-width: 31rem;
-    margin: 1rem 0rem 1rem 1rem;
-    img {
-      width: 25rem;
-    }
-  }
-
-  .techStack {
-    width: fit-content;
-    gap: 0.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-
-  .cardFlexContainer {
-    width: 60rem;
+//1088px
+@media (max-width: 68em) {
+  .project-header {
+    font-size: 2rem;
   }
 }

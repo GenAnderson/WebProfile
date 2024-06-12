@@ -17,7 +17,6 @@ const ProjectsOther = () => {
   const ref = useRef(null);
 
   const sliderScreenSize = useScreenSizeSlider();
-  console.log(sliderScreenSize);
 
   const xTransform = useTransform(
     scrollYProgress,
@@ -25,8 +24,6 @@ const ProjectsOther = () => {
     sliderScreenSize
     // ["0%", "-99%"]
   );
-
-  console.log(slideAnimation);
 
   const { gearOne, gearTwo } = useGearAnimation(scrollY);
 

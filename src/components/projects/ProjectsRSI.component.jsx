@@ -7,7 +7,7 @@ import rsiBG from "../../images/rsiBG.jpg";
 
 import { getRSIPhotoUpValues } from "../utilities/motions.utils";
 
-import { useScreenSize } from "../utilities/screenSize.utils";
+import { useScreenSizeRSI } from "../utilities/screenSize.utils";
 
 import "./ProjectsRSI.styles.scss";
 
@@ -15,10 +15,10 @@ const ProjectsRSI = ({ onSectionInView }) => {
   const [rsiDesc, setRsiDesc] = useState(false);
   const [rsiPics, setRsiPics] = useState(null);
   const { scrollYProgress } = useScroll();
-  const screenSize = useScreenSize();
+  const screenSizeRSI = useScreenSizeRSI();
   const rsiRef = useRef(null);
 
-  const photoUpValues = getRSIPhotoUpValues(screenSize);
+  const photoUpValues = getRSIPhotoUpValues(screenSizeRSI);
   const movePhotoUp = useTransform(
     scrollYProgress,
     [0, 0.2],

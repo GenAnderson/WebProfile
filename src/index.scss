@@ -3,6 +3,7 @@ body {
   font-size: 62.5%;
   font-family: "Oswald";
   overflow-x: hidden;
+  -webkit-text-size-adjust: none;
 }
 
 @media (max-width: 60em) {
@@ -10,9 +11,14 @@ body {
     font-size: 61%;
   }
 }
+@media (max-width: 50em) {
+  html {
+    font-size: 60%;
+  }
+}
 
 @media (max-width: 40em) {
   html {
-    font-size: 58%;
+    font-size: 59%;
   }
 }

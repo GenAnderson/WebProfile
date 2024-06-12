@@ -27,3 +27,13 @@
     padding: 2rem 8rem;
   }
 }
+
+///////////////////////////MEDIA QUERY///////////////////////
+//1088px
+@media (max-width: 68em) {
+  .circle-two {
+    p {
+      padding: 2rem 4rem;
+    }
+  }
+}

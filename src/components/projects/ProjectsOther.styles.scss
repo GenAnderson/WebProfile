@@ -9,6 +9,7 @@
 
   background-color: #d6e5e3;
   z-index: -1;
+  overflow: hidden;
 }
 
 .largeGear {
@@ -72,4 +73,52 @@
   }
 }
 
-//1744px
+//1424px
+@media (max-width: 89em) {
+  .largeGear {
+    width: 70rem;
+    height: 70rem;
+  }
+
+  .smallGear {
+    width: 50rem;
+    height: 50rem;
+  }
+}
+
+//1088px
+@media (max-width: 68em) {
+  .largeGear {
+    width: 50rem;
+    height: 50rem;
+    bottom: -30%;
+  }
+
+  .smallGear {
+    width: 40rem;
+    height: 40rem;
+  }
+}
+//1568px
+// @media (max-width: 98em) {
+//   .projectCard {
+//     padding: 1rem;
+//     min-width: 31rem;
+//     margin: 1rem 0rem 1rem 1rem;
+//     img {
+//       width: 25rem;
+//     }
+//   }
+
+//   .techStack {
+//     width: fit-content;
+//     gap: 0.5rem;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-rows: 1fr 1fr;
+//   }
+
+//   .cardFlexContainer {
+//     width: 60rem;
+//   }
+// }

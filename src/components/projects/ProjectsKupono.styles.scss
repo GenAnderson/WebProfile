@@ -95,6 +95,80 @@
     padding: 0 3rem;
   }
   .kuponoDescContainer {
-    padding: 10rem 0rem 4rem 10rem;
+    padding: 10rem 2rem 4rem 10rem;
+  }
+}
+
+//1568px
+@media (max-width: 98em) {
+  .kuponoLeaf {
+    height: 100%;
+  }
+  .imageContainer {
+    height: 80%;
+  }
+  .kuponoSiteMini {
+    width: 25rem;
+    right: -100%;
+  }
+
+  .kuponoDescContainer {
+    padding: 5rem 2rem 4rem 5rem;
+  }
+}
+
+//1248px
+@media (max-width: 78em) {
+  .kuponoDescContainer {
+    padding: 5rem 2rem 0rem 0rem;
+
+    &::after {
+      height: 75%;
+    }
+  }
+  .kuponoDesc {
+    padding: 2rem 0rem 5rem 1rem;
+  }
+}
+
+//1088px
+@media (max-width: 68em) {
+  .kuponoDescContainer {
+    &::after {
+      height: 80%;
+    }
+  }
+
+  .kuponoDesc {
+    padding: 2rem 0rem 1rem 12rem;
+  }
+  .imageContainer {
+    height: 70%;
+  }
+  .kuponoSiteMini {
+    width: 20rem;
+    right: -110%;
+    bottom: -40%;
+  }
+}
+
+//1088px
+@media (max-width: 60em) {
+  .kuponoDescContainer {
+    &::after {
+      height: 90%;
+    }
+  }
+
+  .kuponoDesc {
+    padding: 2rem 0rem 1rem 16rem;
+  }
+  .imageContainer {
+    height: 70%;
+  }
+  .kuponoSiteMini {
+    width: 20rem;
+    right: -120%;
+    bottom: -30%;
   }
 }

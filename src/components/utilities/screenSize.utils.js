@@ -25,6 +25,31 @@ export const useScreenSize = () => {
   return "extraSmall";
 };
 
+export const useScreenSizeRSI = () => {
+  const max = useMediaQuery({ query: "(min-width: 121em)" });
+  const max120 = useMediaQuery({ query: "(max-width: 120em)" });
+
+  // // width = 1216-1920
+  // const isMediumScreen = useMediaQuery({
+  //   query: "(min-width: 76em) and (max-width: 120em)",
+  // });
+
+  // // width = 768-1200
+  // const isSmallScreen = useMediaQuery({
+  //   query: "(min-width: 48em) and (max-width: 75em)",
+  // });
+
+  // // width = 752
+  // const isExtraSmallScreen = useMediaQuery({ query: "(max-width: 47em)" });
+
+  if (max) return "max";
+  if (max120) return "max120";
+  // if (isSmallScreen) return "small";
+  // if (isExtraSmallScreen) return "extraSmall";
+
+  return "max120";
+};
+
 export const useScreenSizeSlider = () => {
   const max = useMediaQuery({ query: "(min-width: 118em)" });
   const first1720 = useMediaQuery({ query: "(max-width: 109em)" });
