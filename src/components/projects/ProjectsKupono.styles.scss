@@ -172,3 +172,58 @@
     bottom: -30%;
   }
 }
+
+//880px
+@media (max-width: 55em) {
+  .kuponoLeaf {
+    height: 95%;
+    right: -8%;
+  }
+
+  .kupono {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    .kuponoDesc {
+      font-size: 1.4rem;
+    }
+  }
+
+  .imageContainer {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 75% 25%;
+  }
+
+  .kuponoSiteMain {
+    height: auto;
+    width: 85%;
+    object-fit: cover;
+    grid-column: 1 / 2;
+    top: -40%;
+  }
+
+  .kuponoSiteMini {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    grid-column: 2 / 3;
+    top: 0;
+    right: 0;
+  }
+}
+
+//880px
+@media (max-width: 55em) and (orientation: portrait) {
+  .imageContainer {
+    grid-template-columns: 75% 25%;
+  }
+
+  .kuponoSiteMain {
+    width: 90%;
+    top: -20%;
+  }
+  .kuponoSiteMini {
+    right: 25%;
+  }
+}

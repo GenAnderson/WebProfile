@@ -32,9 +32,12 @@ const App = () => {
   };
 
   const handleTouchEnd = () => {
-    if (touchEndY < touchStartY && currentPage <= 4) {
+    if (touchEndY < touchStartY && currentPage < 5) {
+      // Swipe up and move to the next page if not on page 5
       setCurrentPage(currentPage + 1);
-    } else if (touchEndY > touchStartY && currentPage > 1) {
+    }
+    // No swipe down allowed from page 5
+    else if (touchEndY > touchStartY && currentPage > 1 && currentPage < 5) {
       setCurrentPage(currentPage - 1);
     }
   };

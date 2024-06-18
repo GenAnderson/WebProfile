@@ -30,21 +30,29 @@
   z-index: -2;
 }
 
-.overFlowContainer {
-  //equals only visible card width
-  overflow-x: hidden;
-  width: 170rem;
-  margin-top: -10rem;
-  background-color: #d6e5e3;
-  box-shadow: 0.4rem 0.4rem 0.4rem #001514;
-  border: #001514 0.5rem solid;
+.otherProjectsContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
 }
 
-.cardFlexContainer {
-  //equals total cards width
+.cardContainer {
+  height: 100%;
   display: flex;
-  width: fit-content;
-  height: 64rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 2rem;
+  width: 40vw;
+  position: fixed;
+  top: 0;
+}
+.cardContainer:nth-child(1) {
+  left: 5%;
+}
+
+.cardContainer:nth-child(2) {
+  right: 5%;
 }
 
 ////////////////////////////////MEDIA QUERY//////////////////////////////////
@@ -67,10 +75,6 @@
     width: 60rem;
     height: 60rem;
   }
-
-  .cardFlexContainer {
-    height: 44rem;
-  }
 }
 
 //1424px
@@ -91,7 +95,7 @@
   .largeGear {
     width: 50rem;
     height: 50rem;
-    bottom: -30%;
+    bottom: -20%;
   }
 
   .smallGear {
@@ -99,6 +103,7 @@
     height: 40rem;
   }
 }
+
 //1568px
 // @media (max-width: 98em) {
 //   .projectCard {

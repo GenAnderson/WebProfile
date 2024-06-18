@@ -6,8 +6,6 @@ import ProjectsKupono from "./ProjectsKupono.component";
 import ProjectsRSI from "./ProjectsRSI.component";
 import ProjectsOther from "./ProjectsOther.component";
 
-import { useScreenSize } from "../utilities/screenSize.utils";
-
 import "./Projects.styles.scss";
 
 const Projects = ({ currentPage, onNavigate }) => {
@@ -16,7 +14,6 @@ const Projects = ({ currentPage, onNavigate }) => {
   const [wasZero, setWasZero] = useState(false);
   const { scrollY, scrollYProgress } = useScroll();
   const [rsiPicBG, setRsiPicBG] = useState(false);
-  const screenSize = useScreenSize();
 
   const isInViewBGHandler = (state) => {
     setRsiPicBG(state);

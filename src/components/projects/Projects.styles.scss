@@ -9,10 +9,7 @@
   overflow-y: hidden;
   overflow-x: hidden;
   text-align: center;
-
-  p {
-    font-size: 1.6rem;
-  }
+  // pointer-events: all;
 }
 .backUpButton {
   font-size: 3rem;
@@ -85,5 +82,17 @@
 @media (max-width: 68em) {
   .project-header {
     font-size: 2rem;
+  }
+}
+
+//880px
+@media (max-width: 55em) and (orientation: portrait) {
+  .line {
+    &__midLeft {
+      top: -8%;
+    }
+    &__midRight {
+      top: -8%;
+    }
   }
 }

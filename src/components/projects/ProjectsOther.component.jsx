@@ -1,87 +1,136 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
+
+import projectsData from "./projectsOtherData";
+import ProjectCard from "./ProjectCard.component";
 
 import gear from "../../images/gear.png";
 import smallGear from "../../images/smallgear.png";
 
-import projectsData from "./projectsOtherData";
-import ProjectCard from "./ProjectCard.component";
-import useGearAnimation from "../utilities/useGear.utils";
-import { useScreenSizeSlider } from "../utilities/screenSize.utils";
-
 import "./ProjectsOther.styles.scss";
 
 const ProjectsOther = () => {
-  const { scrollY, scrollYProgress } = useScroll();
-  const [slideAnimation, setSlideAnimation] = useState(false);
-  const ref = useRef(null);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [cardsInView, setCardsInView] = useState([]);
+  const cardRefs = useRef([]);
+  const otherProjectsRef = useRef(null);
 
-  const sliderScreenSize = useScreenSizeSlider();
+  const gearOneControl = useAnimation();
+  const gearTwoControl = useAnimation();
+  const { ref: gearOneRef, inView: gearOneInView } = useInView({
+    threshold: 0.1,
+  });
+  const { ref: gearTwoRef, inView: gearTwoInView } = useInView({
+    threshold: 0.4,
+  });
 
-  const xTransform = useTransform(
-    scrollYProgress,
-    slideAnimation ? [0.75, 1] : [0.8, 1],
-    sliderScreenSize
-    // ["0%", "-99%"]
-  );
-
-  const { gearOne, gearTwo } = useGearAnimation(scrollY);
-
-  // for other projects
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // console.log(entry);
-
-        if (entry.isIntersecting) {
-          setSlideAnimation(true);
-        } else setSlideAnimation(false);
-      },
-      { threshold: 1, rootMargin: "0px 0px -5px 0px" } // Adjust threshold as needed
-    );
-
-    const sliderRef = ref.current;
-
-    if (sliderRef) {
-      observer.observe(sliderRef);
+  const animateGear = (control, inView, scrollDirection) => {
+    if (inView) {
+      control.start({
+        rotate: scrollDirection === "down" ? [0, 180] : [0, -180],
+        transition: { duration: 0.4, ease: "linear" },
+      });
     }
+  };
 
-    return () => {
-      if (sliderRef) {
-        observer.unobserve(sliderRef);
+  const animationOffset = -200;
+  //for gears moving
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    const scrollDirection = currentScrollY > lastScrollY ? "down" : "up";
+
+    const visibleCards = [];
+
+    animateGear(gearOneControl, gearOneInView, scrollDirection);
+    animateGear(gearTwoControl, gearTwoInView, scrollDirection);
+
+    setLastScrollY(currentScrollY);
+    const otherProjectsRect = otherProjectsRef.current.getBoundingClientRect();
+
+    cardRefs.current.forEach((card, index) => {
+      if (card) {
+        const windowHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+        const rect = card.getBoundingClientRect();
+        const relativeTop = rect.top - otherProjectsRect.top;
+        const relativeBottom = rect.bottom - otherProjectsRect.top;
+
+        if (
+          relativeTop < windowHeight &&
+          relativeBottom >= 0 - animationOffset
+        ) {
+          console.log(
+            `card: ${card.dataset.id}; rect.top: ${rect.top}; rect.bottom: ${rect.bottom}`
+          );
+          console.log("relativeTop: ", relativeTop);
+          console.log("relativeBottom: ", relativeBottom);
+          console.log("windowHeight: ", windowHeight);
+          visibleCards.push(String(index));
+        }
       }
-    };
-  }, []);
+    });
 
+    setCardsInView(visibleCards);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [
+    lastScrollY,
+    gearOneInView,
+    gearTwoInView,
+    gearOneControl,
+    gearTwoControl,
+    otherProjectsRef,
+  ]);
+
+  console.log(cardsInView);
   return (
-    <div className="otherProjects">
+    <div className="otherProjects" ref={otherProjectsRef}>
       <motion.img
+        ref={gearOneRef}
         src={gear}
         alt="gear icon large"
         className="largeGear"
         initial={{ rotate: 0 }}
-        animate={gearOne}
-        transition={{ duration: 0.4 }}
+        animate={gearOneControl}
       ></motion.img>
       <motion.img
+        ref={gearTwoRef}
         src={smallGear}
         alt="gear icon small"
         className="smallGear"
         initial={{ rotate: 0 }}
-        animate={gearTwo}
-        transition={{ duration: 0.4 }}
+        animate={gearTwoControl}
       ></motion.img>
 
-      <div className="overFlowContainer" ref={ref}>
-        <motion.div
-          className="cardFlexContainer"
-          style={{ x: xTransform }}
-          transition={{ type: "tween", ease: "linear" }}
-        >
-          {projectsData.map((project) => (
-            <ProjectCard key={project.id} project={project}></ProjectCard>
+      <div className="otherProjectsContainer">
+        <div className="cardContainer">
+          {projectsData.slice(0, 3).map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+              inView={cardsInView.includes(String(index))}
+              cardRef={(el) => (cardRefs.current[index] = el)}
+            />
           ))}
-        </motion.div>
+        </div>
+        <div className="cardContainer">
+          {projectsData.slice(3, 6).map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index + 3}
+              inView={cardsInView.includes(String(index + 3))}
+              cardRef={(el) => (cardRefs.current[index + 3] = el)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

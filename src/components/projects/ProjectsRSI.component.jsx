@@ -5,9 +5,16 @@ import rsi2 from "../../images/rsi2.png";
 import rsi3 from "../../images/rsi3.png";
 import rsiBG from "../../images/rsiBG.jpg";
 
-import { getRSIPhotoUpValues } from "../utilities/motions.utils";
+import {
+  getRSIPhotoUpValues,
+  getRSIPhotoLeftValues,
+  getRSIPhotoRightValues,
+} from "../utilities/motions.utils";
 
-import { useScreenSizeRSI } from "../utilities/screenSize.utils";
+import {
+  useScreenSizeRSIup,
+  useScreenSizeRSISides,
+} from "../utilities/screenSize.utils";
 
 import "./ProjectsRSI.styles.scss";
 
@@ -15,17 +22,30 @@ const ProjectsRSI = ({ onSectionInView }) => {
   const [rsiDesc, setRsiDesc] = useState(false);
   const [rsiPics, setRsiPics] = useState(null);
   const { scrollYProgress } = useScroll();
-  const screenSizeRSI = useScreenSizeRSI();
+  const screenSizeRSIup = useScreenSizeRSIup();
+  const screenSizeRSIsides = useScreenSizeRSISides();
   const rsiRef = useRef(null);
 
-  const photoUpValues = getRSIPhotoUpValues(screenSizeRSI);
+  const photoUpValues = getRSIPhotoUpValues(screenSizeRSIup);
+  const photoRightValues = getRSIPhotoRightValues(screenSizeRSIsides);
+  const photoLeftValues = getRSIPhotoLeftValues(screenSizeRSIsides);
+
   const movePhotoUp = useTransform(
     scrollYProgress,
     [0, 0.2],
     rsiPics ? photoUpValues : [" ", " "]
   );
-  const movePhotoRight = useTransform(scrollYProgress, [0, 0.2], ["0", "5rem"]);
-  const movePhotoLeft = useTransform(scrollYProgress, [0, 0.2], ["0", "-5rem"]);
+
+  const movePhotoRight = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    photoRightValues
+  );
+  const movePhotoLeft = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    photoLeftValues
+  );
 
   const rsiDescAnimation = {
     hidden: {
@@ -106,7 +126,7 @@ const ProjectsRSI = ({ onSectionInView }) => {
           <motion.img
             src={rsi1}
             alt="rsi website pic1"
-            className="rsi-gridPic side"
+            className="rsi-gridPic side side1"
             style={{ y: movePhotoUp, x: movePhotoRight }}
           />
         </a>
@@ -132,7 +152,7 @@ const ProjectsRSI = ({ onSectionInView }) => {
           <motion.img
             src={rsi2}
             alt="rsi website pic2"
-            className="rsi-gridPic side"
+            className="rsi-gridPic side side2"
             style={{ y: movePhotoUp, x: movePhotoLeft }}
           />
         </a>

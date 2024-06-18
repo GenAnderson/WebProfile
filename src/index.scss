@@ -4,6 +4,9 @@ body {
   font-family: "Oswald";
   overflow-x: hidden;
   -webkit-text-size-adjust: none;
+  // touch-action: none;
+  height: 100%;
+  overscroll-behavior: contain;
 }
 
 @media (max-width: 60em) {

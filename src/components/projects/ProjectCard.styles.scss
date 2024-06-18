@@ -2,25 +2,32 @@
   background-color: #001514;
   color: #d6e5e3;
   box-shadow: #001514 0.2rem 0.2rem 0.2rem;
-  width: 40rem;
-  height: 60rem;
-  margin: 2rem 1rem;
+  width: 100%;
+  height: 30rem;
+  margin: 2rem;
   padding: 2.5rem;
 
+  transition: opacity 0.5s ease-out;
+  display: inline-block;
+
   img {
-    width: 35rem;
-    height: auto;
+    width: 100%;
+    height: 100%;
     padding: 1rem 0.5rem;
     object-fit: cover;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
   }
+}
+.visible {
+  opacity: 1;
 }
 
 .projectLink {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15% 70% 15%;
 }
 
 .techStack {
@@ -42,10 +49,10 @@
 
 ////////////////////////////////MEDIA QUERY//////////////////////////////////
 //1920px (mid-size screen)
-@media (max-width: 120em) {
-  .projectCard {
-    padding: 1.2rem;
-    height: 42rem;
-    margin: 1rem;
-  }
-}
+// @media (max-width: 120em) {
+//   .projectCard {
+//     padding: 1.2rem;
+//     height: 42rem;
+//     margin: 1rem;
+//   }
+// }
