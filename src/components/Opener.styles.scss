@@ -92,3 +92,13 @@
   right: -100%;
   top: 0;
 }
+
+/////////////////////////////MEDIA QUERY///////////////////////////
+//640px
+@media (max-width: 40em) and (orientation: portrait) {
+  .panel {
+    .openerHeading {
+      letter-spacing: 0;
+    }
+  }
+}

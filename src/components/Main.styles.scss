@@ -62,3 +62,19 @@
     }
   }
 }
+
+//880px
+@media (max-width: 55em) and (max-height: 80em) {
+  .circle-one {
+    width: 90vw;
+    height: 85vh;
+  }
+}
+
+//640px
+@media (max-width: 40em) and (orientation: portrait) {
+  .circle-one {
+    width: 80vw;
+    height: 70vh;
+  }
+}

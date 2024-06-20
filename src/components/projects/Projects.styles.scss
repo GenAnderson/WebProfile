@@ -9,7 +9,6 @@
   overflow-y: hidden;
   overflow-x: hidden;
   text-align: center;
-  // pointer-events: all;
 }
 .backUpButton {
   font-size: 3rem;
@@ -17,7 +16,6 @@
   position: absolute;
   top: -3rem;
   left: 50%;
-  transform: translateX(-50%);
   background-color: #001514;
   border-radius: 5%;
   box-shadow: 0.1rem 0.2rem 0.4rem #111;
@@ -94,5 +92,12 @@
     &__midRight {
       top: -8%;
     }
+  }
+}
+
+//400px
+@media (max-width: 25em) {
+  .project-header {
+    font-size: 1.6rem;
   }
 }

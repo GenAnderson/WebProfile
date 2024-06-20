@@ -117,45 +117,45 @@ const ProjectsRSI = ({ onSectionInView }) => {
   return (
     <div className="rsi" ref={rsiRef}>
       <div className="rsi-gridGallery">
-        <a
+        <motion.a
           href="https://genanderson.github.io/rsi-react/"
           target="_blank"
           rel="noreferrer"
           className="sidePicAnchor"
+          style={{ y: movePhotoUp, x: movePhotoRight }}
         >
-          <motion.img
+          <img
             src={rsi1}
             alt="rsi website pic1"
             className="rsi-gridPic side side1"
-            style={{ y: movePhotoUp, x: movePhotoRight }}
           />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
           href="https://genanderson.github.io/rsi-react/"
           target="_blank"
           rel="noreferrer"
           className="midPicAnchor"
+          style={{ y: movePhotoUp }}
         >
-          <motion.img
+          <img
             src={rsi3}
             alt="rsi website mobile"
             className="rsi-gridPic middle"
-            style={{ y: movePhotoUp }}
           />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
           href="https://genanderson.github.io/rsi-react/"
           target="_blank"
           rel="noreferrer"
           className="sidePicAnchor"
+          style={{ y: movePhotoUp, x: movePhotoLeft }}
         >
-          <motion.img
+          <img
             src={rsi2}
             alt="rsi website pic2"
             className="rsi-gridPic side side2"
-            style={{ y: movePhotoUp, x: movePhotoLeft }}
           />
-        </a>
+        </motion.a>
       </div>
 
       <motion.div
@@ -188,13 +188,13 @@ const ProjectsRSI = ({ onSectionInView }) => {
           </a>
         </h3>
         <p>
-          Developed using ReactJS, this website leverages the Framer Motion
-          library to deliver a seamless and dynamic user experience. By
-          integrating sticky positioning and sophisticated animations, the
-          application provides an engaging and informative interface. The site
-          is currently in a pre-launch phase awaiting the owners to finalize
-          additional content. If you'd like to see the initial site developed
-          for RSI a year ago, see below in the other notable projects section.
+          Developed using ReactJS, this site leverages the Framer Motion library
+          to deliver a seamless and dynamic user experience. By integrating
+          sticky positioning and animations, the application provides an
+          engaging and informative interface. The site is currently in a
+          pre-launch phase awaiting the owners to finalize additional content.
+          If you'd like to see the first site (currently active) developed for
+          RSI a year ago, see below in the other notable projects section.
         </p>
       </motion.div>
       <img src={rsiBG} alt="construction background" className="rsiBG"></img>

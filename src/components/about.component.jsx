@@ -52,13 +52,12 @@ const About = ({ currentPage }) => {
         <p>
           My journey started with self-directed learning back in 2021. I delved
           into various online courses and tutorials to grasp the fundamentals of
-          web development and from there, created a couple of professional-grade
-          websites for colleagues. I relished in the creative process and
-          decided to fortify what I'd learned by enrolling in a boot camp. This
-          immersive experience not only expanded my technical skills but also
-          provided a deeper understanding of the intricacies within the coding
-          world. I hope to one day have the opportunity to make my place in this
-          industry.
+          web development and from there, created a couple of websites for
+          colleagues. I relish in the creative process and fortified what I'd
+          learned by enrolling in a boot camp. This not only expanded my
+          technical skills but also provided a deeper understanding of the
+          intricacies within the coding world. I hope to one day have the
+          opportunity to make my place in this industry.
         </p>
       </motion.div>
     </motion.div>

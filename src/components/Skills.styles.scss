@@ -88,7 +88,7 @@
 
 ////////////////////////////////MEDIA QUERY//////////////////////////////////
 //1326px
-@media (max-width: 78em) {
+@media (max-width: 78em) and (orientation: landscape) {
   .circle-three {
     .icon-container {
       padding: 1rem;
@@ -103,6 +103,47 @@
         height: 3rem;
         width: 3rem;
       }
+    }
+  }
+}
+//880px
+@media (max-width: 55em) and (max-height: 80em) {
+  .circle-three {
+    width: 100vw;
+    height: 95vh;
+    h2 {
+      justify-self: center;
+    }
+  }
+}
+
+//640px
+@media (max-width: 40em) and (orientation: portrait) {
+  .circle-three {
+    width: 100vw;
+    height: 90vh;
+
+    .icon-container {
+      padding: 1rem;
+      margin: 0;
+    }
+    .icon-imageContainer {
+      height: 5rem;
+      width: 5rem;
+
+      img {
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+  }
+}
+
+//512px
+@media (max-width: 32em) and (orientation: portrait) {
+  .circle-three {
+    .skills-container {
+      padding: 2rem;
     }
   }
 }

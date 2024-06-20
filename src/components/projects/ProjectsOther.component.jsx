@@ -13,6 +13,7 @@ import "./ProjectsOther.styles.scss";
 const ProjectsOther = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [cardsInView, setCardsInView] = useState([]);
+  const [changeCardZ, setChangeCardZ] = useState(null);
   const cardRefs = useRef([]);
   const otherProjectsRef = useRef(null);
 
@@ -22,30 +23,52 @@ const ProjectsOther = () => {
     threshold: 0.1,
   });
   const { ref: gearTwoRef, inView: gearTwoInView } = useInView({
-    threshold: 0.4,
+    threshold: 0.2,
   });
+
+  const [rotation, setRotation] = useState("");
+  const [removeArrow, setRemoveArrow] = useState("");
+
+  const rotateLeft = () => {
+    if (rotation === "") {
+      setRotation("rotateLeft");
+      setRemoveArrow("removeLeft");
+    } else if (rotation === "rotateRight") {
+      setRotation("");
+      setRemoveArrow("");
+    }
+  };
+
+  const rotateRight = () => {
+    if (rotation === "") {
+      setRotation("rotateRight");
+      setRemoveArrow("removeRight");
+    } else if (rotation === "rotateLeft") {
+      setRotation("");
+    }
+  };
+
+  console.log("rotation: ", rotation);
+  console.log("arrow: ", removeArrow);
 
   const animateGear = (control, inView, scrollDirection) => {
     if (inView) {
       control.start({
-        rotate: scrollDirection === "down" ? [0, 180] : [0, -180],
+        rotate: scrollDirection === "down" ? [0, 90] : [0, -90],
         transition: { duration: 0.4, ease: "linear" },
       });
     }
   };
 
-  const animationOffset = -200;
-  //for gears moving
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
     const scrollDirection = currentScrollY > lastScrollY ? "down" : "up";
-
     const visibleCards = [];
 
     animateGear(gearOneControl, gearOneInView, scrollDirection);
     animateGear(gearTwoControl, gearTwoInView, scrollDirection);
-
     setLastScrollY(currentScrollY);
+
     const otherProjectsRect = otherProjectsRef.current.getBoundingClientRect();
 
     cardRefs.current.forEach((card, index) => {
@@ -56,20 +79,17 @@ const ProjectsOther = () => {
         const relativeTop = rect.top - otherProjectsRect.top;
         const relativeBottom = rect.bottom - otherProjectsRect.top;
 
-        if (
-          relativeTop < windowHeight &&
-          relativeBottom >= 0 - animationOffset
-        ) {
-          console.log(
-            `card: ${card.dataset.id}; rect.top: ${rect.top}; rect.bottom: ${rect.bottom}`
-          );
-          console.log("relativeTop: ", relativeTop);
-          console.log("relativeBottom: ", relativeBottom);
-          console.log("windowHeight: ", windowHeight);
+        if (relativeTop < windowHeight && relativeBottom >= 0) {
           visibleCards.push(String(index));
         }
       }
     });
+
+    if (otherProjectsRect.top < 1) {
+      setChangeCardZ(true);
+    } else {
+      setChangeCardZ(false);
+    }
 
     setCardsInView(visibleCards);
   };
@@ -88,9 +108,11 @@ const ProjectsOther = () => {
     otherProjectsRef,
   ]);
 
-  console.log(cardsInView);
   return (
-    <div className="otherProjects" ref={otherProjectsRef}>
+    <div
+      className={`otherProjects ${changeCardZ ? "zUp" : ""}`}
+      ref={otherProjectsRef}
+    >
       <motion.img
         ref={gearOneRef}
         src={gear}
@@ -107,9 +129,24 @@ const ProjectsOther = () => {
         initial={{ rotate: 0 }}
         animate={gearTwoControl}
       ></motion.img>
-
-      <div className="otherProjectsContainer">
-        <div className="cardContainer">
+      <div
+        className={`arrow arrow__left ${
+          removeArrow === "removeLeft" ? "removeArrow" : ""
+        }`}
+        onClick={rotateLeft}
+      >
+        ⟪
+      </div>
+      <div
+        className={`arrow arrow__right ${
+          removeArrow === "removeRight" ? "removeArrow" : ""
+        }`}
+        onClick={rotateRight}
+      >
+        ⟫
+      </div>
+      <div className={`otherProjectsContainer main`}>
+        <div className={`cardContainer main cardContainer__one  ${rotation}`}>
           {projectsData.slice(0, 3).map((project, index) => (
             <ProjectCard
               key={project.id}
@@ -120,7 +157,11 @@ const ProjectsOther = () => {
             />
           ))}
         </div>
-        <div className="cardContainer">
+        <div
+          className={`cardContainer main cardContainer__two ${
+            rotation ? "back" : ""
+          }`}
+        >
           {projectsData.slice(3, 6).map((project, index) => (
             <ProjectCard
               key={project.id}

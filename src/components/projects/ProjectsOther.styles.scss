@@ -8,8 +8,11 @@
   position: relative;
 
   background-color: #d6e5e3;
-  z-index: -1;
+  z-index: -2;
   overflow: hidden;
+}
+.zUp {
+  z-index: 0;
 }
 
 .largeGear {
@@ -42,6 +45,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   margin: 0 2rem;
   width: 40vw;
   position: fixed;
@@ -55,6 +59,29 @@
   right: 5%;
 }
 
+.arrow {
+  font-size: 3rem;
+  color: #d6e5e3;
+  background-color: #001514;
+  border-radius: 5%;
+  box-shadow: 0.1rem 0.2rem 0.4rem #111;
+  padding: 1.5rem 0.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 1rem;
+  display: none;
+  z-index: 1;
+
+  &__left {
+    left: 0%;
+  }
+  &__right {
+    right: 0%;
+    // transform: translateY(-50%);
+  }
+}
+
 ////////////////////////////////MEDIA QUERY//////////////////////////////////
 //1920px (mid-size screen)
 @media (max-width: 120em) {
@@ -65,7 +92,7 @@
   }
 
   .otherProjects {
-    padding: 10rem 10rem 0rem 10rem;
+    padding: 5rem;
   }
   .largeGear {
     width: 100rem;
@@ -74,6 +101,32 @@
   .smallGear {
     width: 60rem;
     height: 60rem;
+  }
+
+  .cardContainer:nth-child(1) {
+    left: 5%;
+  }
+
+  .cardContainer:nth-child(2) {
+    right: 5%;
+  }
+}
+
+//1568px
+@media (max-width: 98em) {
+  .otherProjects {
+    padding: 2rem;
+  }
+  .cardContainer {
+    width: 45vw;
+  }
+
+  .cardContainer:nth-child(1) {
+    left: 1%;
+  }
+
+  .cardContainer:nth-child(2) {
+    right: 1%;
   }
 }
 
@@ -89,6 +142,12 @@
     height: 50rem;
   }
 }
+//1248px
+@media (max-width: 78em) and (orientation: landscape) {
+  .cardContainer {
+    margin: 1.2rem 1rem;
+  }
+}
 
 //1088px
 @media (max-width: 68em) {
@@ -102,28 +161,81 @@
     width: 40rem;
     height: 40rem;
   }
+
+  .cardContainer {
+    margin: 0.5rem;
+  }
 }
 
-//1568px
-// @media (max-width: 98em) {
-//   .projectCard {
-//     padding: 1rem;
-//     min-width: 31rem;
-//     margin: 1rem 0rem 1rem 1rem;
-//     img {
-//       width: 25rem;
-//     }
-//   }
+//800px
+@media (max-width: 50em) {
+  .otherProjects {
+    padding: 0;
+  }
+  .cardContainer:nth-child(1) {
+    left: unset;
+  }
 
-//   .techStack {
-//     width: fit-content;
-//     gap: 0.5rem;
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-//     grid-template-rows: 1fr 1fr;
-//   }
+  .cardContainer:nth-child(2) {
+    right: unset;
+  }
 
-//   .cardFlexContainer {
-//     width: 60rem;
-//   }
-// }
+  .otherProjectsContainer {
+    justify-content: center;
+  }
+
+  .main {
+    perspective: 500rem;
+    -moz-perspective: 500rem;
+    backface-visibility: hidden;
+    position: relative;
+    transition: all 1s;
+  }
+
+  .cardContainer {
+    width: 85vw;
+    position: absolute;
+    top: 0;
+    transition: transform 1s;
+
+    &__two {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .rotateLeft {
+    transform: rotateY(-180deg);
+  }
+  .back {
+    transform: rotateY(0deg);
+  }
+  .rotateRight {
+    transform: rotateY(180deg);
+  }
+
+  .arrow {
+    display: inline-block;
+  }
+
+  .removeArrow {
+    display: none;
+  }
+}
+
+//640px
+@media (max-width: 40em) {
+  .cardContainer {
+    width: 80vw;
+  }
+  .largeGear {
+    width: 40rem;
+    height: 40rem;
+  }
+}
+
+//400px
+@media (max-width: 25em) {
+  .arrow {
+    margin: 0.5rem;
+  }
+}

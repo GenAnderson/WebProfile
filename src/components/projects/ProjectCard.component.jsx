@@ -11,9 +11,9 @@ const ProjectCard = ({ project, index, inView, cardRef }) => {
       ref={cardRef}
       data-id={index}
       className="projectCard"
-      animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
-      initial={{ opacity: 0, scale: 0.8 }}
-      transition={{ duration: 0.5 }}
+      animate={{ scale: inView ? 1 : 0 }}
+      initial={{ scale: 0 }}
+      transition={{ duration: 0.2 }}
     >
       <a href={link} target="_blank" rel="noreferrer" className="projectLink">
         <h3 className="projectTitle">{name}</h3>

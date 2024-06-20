@@ -72,18 +72,12 @@ input {
 .submitButton {
   display: inline;
   color: #d6e5e3;
-
-  // &:hover {
-  //   cursor: pointer;
-  //   scale: 1.1;
-  // }
 }
 
-// .submitButton {
-//   padding: 0.4rem 0.8rem;
-//   background-color: #001514;
-//   color: #d6e5e3;
-//   border: none;
-//   box-shadow: 0.1rem 0.2rem 0.5rem #001514;
-//   border-radius: 5rem;
-// }
+/////////////////////////////MEDIA QUERY///////////////////////////
+//640px
+@media (max-width: 40em) and (orientation: portrait) {
+  .contactButtons {
+    gap: 2.5rem;
+  }
+}

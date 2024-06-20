@@ -19,9 +19,6 @@
     grid-row: 1 / 4;
   }
 }
-.visible {
-  opacity: 1;
-}
 
 .projectLink {
   height: 100%;
@@ -48,11 +45,55 @@
 }
 
 ////////////////////////////////MEDIA QUERY//////////////////////////////////
-//1920px (mid-size screen)
-// @media (max-width: 120em) {
-//   .projectCard {
-//     padding: 1.2rem;
-//     height: 42rem;
-//     margin: 1rem;
-//   }
-// }
+//1248px
+@media (max-width: 78em) {
+  .projectCard {
+    position: relative;
+    background-color: #001514c5;
+    padding: 1rem;
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .stackItem {
+      font-size: 1.2rem;
+    }
+  }
+
+  .projectLink {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+//1088px
+@media (max-width: 68em) {
+  .stackItem {
+    font-size: 1.2rem;
+  }
+  .projectCard {
+    margin: 1rem;
+  }
+}
+
+//640px
+@media (max-width: 40em) {
+  .projectLink {
+    padding: 0rem;
+  }
+  .projectCard {
+    padding: 0.2rem;
+  }
+}
+
+//400px
+@media (max-width: 25em) {
+  .projectCard {
+    margin: 0.5rem;
+  }
+}

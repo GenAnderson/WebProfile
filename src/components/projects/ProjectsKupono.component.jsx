@@ -64,12 +64,12 @@ const ProjectsKupono = () => {
             </a>
           </h3>
           <p className="kuponoDesc">
-            Kupono Acres specializes in cultivating and distribution microgreens
-            exclusively in Hawaii. Utilizing React and SCSS, the site implements
-            media querying to provide a responsive design for use on phones and
-            tablets. It also involves functional components and typical hooks
-            such as useState, useEffect, useRef and useContext for cart
-            management.
+            Kupono Acres specializes in cultivating and distribution of
+            microgreens exclusively in Hawaii. Utilizing React and SCSS, the
+            site implements media querying to provide a responsive design for
+            use on phones and tablets. It includes functional components and
+            typical hooks such as useState, useEffect, useRef and useContext for
+            cart management.
           </p>
         </motion.div>
       </div>

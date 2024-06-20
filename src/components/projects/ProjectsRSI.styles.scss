@@ -22,6 +22,7 @@
   padding: 5rem;
   display: flex;
   justify-content: space-evenly;
+  z-index: -1;
 }
 
 .side {
@@ -244,5 +245,33 @@
   .rsi-gridGallery {
     grid-template-columns: 46% 25%;
     column-gap: 2rem;
+  }
+}
+
+//640px
+@media (max-width: 40em) {
+  .rsi-desc {
+    padding-top: 4rem;
+  }
+}
+
+//512px
+@media (max-width: 32em) {
+  .rsi {
+    padding: 5rem 1rem 1rem 1rem;
+  }
+  .rsi-desc {
+    padding-top: 1.8rem;
+  }
+}
+
+//400px
+@media (max-width: 25em) {
+  .rsi-gridGallery {
+    grid-template-columns: 55% 30%;
+    margin-top: 6rem;
+  }
+  .rsi-desc {
+    padding: 1rem;
   }
 }

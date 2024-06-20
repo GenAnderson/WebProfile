@@ -70,7 +70,8 @@ const Projects = ({ currentPage, onNavigate }) => {
       {scrolledUp && (
         <motion.div
           className="backUpButton"
-          animate={{ y: "100%" }}
+          initial={{ y: "0%", x: "-50%" }}
+          animate={{ y: "100%", x: "-50%" }}
           onClick={() => {
             handleUpClick();
           }}

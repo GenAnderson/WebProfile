@@ -120,11 +120,12 @@
 //1248px
 @media (max-width: 78em) {
   .kuponoDescContainer {
-    padding: 5rem 2rem 0rem 0rem;
-
     &::after {
       height: 75%;
     }
+  }
+  .imageContainer {
+    height: 74%;
   }
   .kuponoDesc {
     padding: 2rem 0rem 5rem 1rem;
@@ -133,6 +134,10 @@
 
 //1088px
 @media (max-width: 68em) {
+  .kuponoLeaf {
+    height: 95%;
+    top: 10%;
+  }
   .kuponoDescContainer {
     &::after {
       height: 80%;
@@ -152,7 +157,7 @@
   }
 }
 
-//1088px
+//960px
 @media (max-width: 60em) {
   .kuponoDescContainer {
     &::after {
@@ -216,14 +221,58 @@
 //880px
 @media (max-width: 55em) and (orientation: portrait) {
   .imageContainer {
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70% 30%;
+  }
+
+  .kuponoSiteMain {
+    width: 100%;
+  }
+  .kuponoSiteMini {
+    height: 130%;
+    width: auto;
+    grid-row: 2;
+    top: -50%;
+  }
+  .kuponoLeaf {
+    height: 85%;
+    right: -15%;
+  }
+  .kuponoDescContainer {
+    padding: 10rem 2rem 4rem 5rem;
+  }
+  .kuponoDesc {
+    padding: 2rem 0rem 0rem 2rem;
+  }
+}
+
+//512px
+@media (max-width: 32em) and (orientation: portrait) {
+  .kupono {
+    height: 55vh;
   }
 
   .kuponoSiteMain {
     width: 90%;
-    top: -20%;
   }
+
   .kuponoSiteMini {
-    right: 25%;
+    height: 140%;
+    width: auto;
+  }
+  .kuponoLeaf {
+    height: 80%;
+    right: -20%;
+  }
+
+  .kuponoDescContainer {
+    padding: 4rem 1rem;
+  }
+}
+
+//400px
+@media (max-width: 25em) {
+  .kuponoLeaf {
+    right: -60%;
   }
 }
