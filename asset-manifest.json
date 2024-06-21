@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.f580fc5f.css",
-    "main.js": "./static/js/main.4c3f3cba.js",
+    "main.js": "./static/js/main.849bb718.js",
     "static/media/rsiOriginal.png": "./static/media/rsiOriginal.d242468a992cdc968a1f.png",
     "static/media/kuponoacres1.png": "./static/media/kuponoacres1.d8d9aacf773848d5e95e.png",
     "static/media/rsiBG.jpg": "./static/media/rsiBG.41a6c5efe8731ba657e4.jpg",
@@ -11,8 +11,8 @@
     "static/media/keyboardBG.jpg": "./static/media/keyboardBG.11924505f5c7699bff79.jpg",
     "static/media/rsi2.png": "./static/media/rsi2.30bf13860c016bb14709.png",
     "static/media/rsi3.png": "./static/media/rsi3.042637c0874dc5cda7e6.png",
+    "static/media/pokedex.png": "./static/media/pokedex.afc7210a5bace92c792f.png",
     "static/media/Chatty.png": "./static/media/Chatty.b60abfe67886b80c66d8.png",
-    "static/media/MyFlix-angular1.png": "./static/media/MyFlix-angular1.ad69531102a184e09928.png",
     "static/media/leaf.png": "./static/media/leaf.b6d58ecc5e403bcf3244.png",
     "static/media/MovieApp2.png": "./static/media/MovieApp2.d7bc3d7ec3191f97e74a.png",
     "static/media/aboutBG.JPG": "./static/media/aboutBG.1c09f14dd544dd493000.JPG",
@@ -22,10 +22,10 @@
     "static/media/gear.png": "./static/media/gear.1e6899ed839b3f8a0194.png",
     "index.html": "./index.html",
     "main.f580fc5f.css.map": "./static/css/main.f580fc5f.css.map",
-    "main.4c3f3cba.js.map": "./static/js/main.4c3f3cba.js.map"
+    "main.849bb718.js.map": "./static/js/main.849bb718.js.map"
   },
   "entrypoints": [
     "static/css/main.f580fc5f.css",
-    "static/js/main.4c3f3cba.js"
+    "static/js/main.849bb718.js"
   ]
 }
