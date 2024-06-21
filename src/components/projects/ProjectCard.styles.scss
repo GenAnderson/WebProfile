@@ -51,8 +51,6 @@
   .projectCard {
     position: relative;
     background-color: #001514c5;
-    height: fit-content;
-
     padding: 1.2rem;
 
     img {
@@ -71,6 +69,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 78em) and (orientation: landscape) {
+  .projectCard {
+    height: fit-content;
   }
 }
 

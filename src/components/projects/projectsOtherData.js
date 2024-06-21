@@ -58,15 +58,11 @@ const projectsOtherData = [
   },
   {
     id: 6,
-    name: "MyFlix-Angular",
-    img: require("../../images/MyFlix-angular1.png"),
-    desc: `The development of this iteration of MyFlix used Angular.
-    Similar to its React counterpart, this rendition seamlessly
-    integrates with my backend movie API. Crafting this version
-    served as an invaluable opportunity to delve deeper into Angular
-    and provided a hands-on learning experience while honing skills.`,
-    stack: ["Angular", "Typescript", "SCSS"],
-    link: "https://genanderson.github.io/myFlix-Angular/welcome",
+    name: "Pokedex",
+    img: require("../../images/pokedex.png"),
+    desc: `This is a very simple web app that uses an external API to fill pokemon information into a pokedex.  Equipped with a search bar for quick access, the app was developed using fetch and promise polyfills.`,
+    stack: ["Jquery", "Bootstrap"],
+    link: "https://genanderson.github.io/pokedex/",
   },
 ];
 
