@@ -38,7 +38,7 @@ const Main = ({ currentPage }) => {
     >
       <div className="main-container">
         <h1>GENEVIEVE ANDERSON</h1>
-        <h2>Full stack web developer</h2>
+        <h2>Full stack web developer / Project Manager</h2>
         <button
           className="button contactMeButton"
           onClick={() => {
