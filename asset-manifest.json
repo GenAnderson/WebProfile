@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.f580fc5f.css",
-    "main.js": "./static/js/main.cbf26976.js",
+    "main.js": "./static/js/main.0b624b10.js",
     "static/media/rsiOriginal.png": "./static/media/rsiOriginal.d242468a992cdc968a1f.png",
     "static/media/kuponoacres1.png": "./static/media/kuponoacres1.d8d9aacf773848d5e95e.png",
     "static/media/rsiBG.jpg": "./static/media/rsiBG.41a6c5efe8731ba657e4.jpg",
@@ -22,10 +22,10 @@
     "static/media/gear.png": "./static/media/gear.1e6899ed839b3f8a0194.png",
     "index.html": "./index.html",
     "main.f580fc5f.css.map": "./static/css/main.f580fc5f.css.map",
-    "main.cbf26976.js.map": "./static/js/main.cbf26976.js.map"
+    "main.0b624b10.js.map": "./static/js/main.0b624b10.js.map"
   },
   "entrypoints": [
     "static/css/main.f580fc5f.css",
-    "static/js/main.cbf26976.js"
+    "static/js/main.0b624b10.js"
   ]
 }
