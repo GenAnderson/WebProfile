@@ -48,7 +48,7 @@
 //640px
 @media (max-width: 40em) and (orientation: portrait) {
   .circle-two {
-    width: 90vw;
+    width: 92vw;
     height: 80vh;
   }
 }
@@ -57,17 +57,8 @@
 @media (max-width: 27em) and (orientation: portrait) {
   .circle-two {
     p {
-      padding: 2rem 2rem 4rem 2rem;
-    }
-  }
-}
-
-//384px
-@media (max-width: 24em) and (orientation: portrait) {
-  .circle-two {
-    p {
-      font-size: 1.3rem;
       padding: 0rem 1rem 1rem 1rem;
+      font-size: 1.3rem;
     }
   }
 }
