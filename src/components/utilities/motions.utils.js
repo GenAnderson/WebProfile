@@ -7,7 +7,7 @@ export const useKupono = (scrollY, values) => {
 export const getRSIPhotoUpValues = (screenSize) => {
   switch (screenSize) {
     case "max":
-      return ["0rem", "-70rem"];
+      return ["0rem", "-62rem"];
     case "max120":
       return ["0rem", "-55rem"];
     case "max55":
@@ -17,6 +17,8 @@ export const getRSIPhotoUpValues = (screenSize) => {
 };
 export const getRSIPhotoRightValues = (screenSize) => {
   switch (screenSize) {
+    case "max":
+      return ["0rem", "-5rem"];
     case "max55":
       return ["0rem", "0rem"];
     case "max50":
@@ -27,6 +29,8 @@ export const getRSIPhotoRightValues = (screenSize) => {
 
 export const getRSIPhotoLeftValues = (screenSize) => {
   switch (screenSize) {
+    case "max":
+      return ["0rem", "5rem"];
     case "max55":
       return ["0rem", "0rem"];
     case "max50":

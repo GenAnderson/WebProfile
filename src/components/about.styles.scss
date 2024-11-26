@@ -52,3 +52,22 @@
     height: 80vh;
   }
 }
+
+//432px
+@media (max-width: 27em) and (orientation: portrait) {
+  .circle-two {
+    p {
+      padding: 2rem 2rem 4rem 2rem;
+    }
+  }
+}
+
+//384px
+@media (max-width: 24em) and (orientation: portrait) {
+  .circle-two {
+    p {
+      font-size: 1.3rem;
+      padding: 0rem 1rem 1rem 1rem;
+    }
+  }
+}

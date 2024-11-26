@@ -93,10 +93,6 @@
   .projectLink {
     padding: 0rem;
   }
-}
-
-//400px
-@media (max-width: 25em) {
   .projectCard {
     margin: 0.5rem;
     padding: 0.5rem;
@@ -110,3 +106,19 @@
     align-self: center;
   }
 }
+
+//400px
+// @media (max-width: 25em) {
+//   .projectCard {
+//     margin: 0.5rem;
+//     padding: 0.5rem;
+//   }
+//   .techStack {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-rows: 1fr 1fr;
+//     width: fit-content;
+//     justify-items: center;
+//     align-self: center;
+//   }
+// }

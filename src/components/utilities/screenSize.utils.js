@@ -17,12 +17,15 @@ export const useScreenSizeRSIup = () => {
 };
 
 export const useScreenSizeRSISides = () => {
+  const max = useMediaQuery({ query: "(min-width: 121em)" });
+
   const max55 = useMediaQuery({
     query: "(max-width: 55em)",
   });
   const max50 = useMediaQuery({
     query: "(max-width: 50em)",
   });
+  if (max) return "max";
 
   if (max55) return "max55";
   if (max50) return "max50";
