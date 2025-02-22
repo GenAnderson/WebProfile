@@ -59,7 +59,7 @@ const Skills = ({ currentPage }) => {
             <div className="icon-imageContainer">
               <img src={icon} alt={`${icon}-icon`}></img>
             </div>
-            <span className="title">icon</span>
+            <span className="title">{icon}</span>
           </div>
         ))}
       </div>
