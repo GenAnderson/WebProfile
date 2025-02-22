@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.28618017.css",
-    "main.js": "./static/js/main.492d6c5c.js",
+    "main.css": "./static/css/main.c350ca39.css",
+    "main.js": "./static/js/main.cce16228.js",
     "static/media/rsiOriginal.png": "./static/media/rsiOriginal.d242468a992cdc968a1f.png",
     "static/media/kuponoacres1.png": "./static/media/kuponoacres1.d8d9aacf773848d5e95e.png",
     "static/media/rsiBG.jpg": "./static/media/rsiBG.41a6c5efe8731ba657e4.jpg",
@@ -20,12 +20,13 @@
     "static/media/smallgear.png": "./static/media/smallgear.011962eab118e5ee2dbb.png",
     "static/media/kuponoacres2.png": "./static/media/kuponoacres2.4d21453ead096ee7bcfd.png",
     "static/media/gear.png": "./static/media/gear.1e6899ed839b3f8a0194.png",
+    "static/media/icon-typescript.png": "./static/media/icon-typescript.bb13ebd9561a6ee645c2.png",
     "index.html": "./index.html",
-    "main.28618017.css.map": "./static/css/main.28618017.css.map",
-    "main.492d6c5c.js.map": "./static/js/main.492d6c5c.js.map"
+    "main.c350ca39.css.map": "./static/css/main.c350ca39.css.map",
+    "main.cce16228.js.map": "./static/js/main.cce16228.js.map"
   },
   "entrypoints": [
-    "static/css/main.28618017.css",
-    "static/js/main.492d6c5c.js"
+    "static/css/main.c350ca39.css",
+    "static/js/main.cce16228.js"
   ]
 }
