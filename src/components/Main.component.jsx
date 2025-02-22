@@ -37,8 +37,7 @@ const Main = ({ currentPage }) => {
       animate={currentPage !== 1 ? "move" : ""}
     >
       <div className="main-container">
-        <h1>GENEVIEVE ANDERSON</h1>
-        <h2>Full stack web developer / Project Manager</h2>
+        <h1>Genevieve Anderson</h1>
         <button
           className="button contactMeButton"
           onClick={() => {

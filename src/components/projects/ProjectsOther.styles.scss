@@ -118,7 +118,8 @@
     padding: 2rem;
   }
   .cardContainer {
-    width: 45vw;
+    width: 48vw;
+    margin: 0rem;
   }
 
   .cardContainer:nth-child(1) {
@@ -143,11 +144,11 @@
   }
 }
 //1248px
-@media (max-width: 78em) and (orientation: landscape) {
-  .cardContainer {
-    margin: 1.2rem 1rem;
-  }
-}
+// @media (max-width: 78em) and (orientation: landscape) {
+//   .cardContainer {
+//     margin: 1.2rem 1rem;
+//   }
+// }
 
 //1088px
 @media (max-width: 68em) {

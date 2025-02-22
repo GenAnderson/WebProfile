@@ -46,12 +46,11 @@
 }
 
 ////////////////////////////////MEDIA QUERY//////////////////////////////////
-//1248px
-@media (max-width: 78em) {
+//1568px
+@media (max-width: 98em) {
   .projectCard {
     position: relative;
     background-color: #001514c5;
-    padding: 1.2rem;
 
     img {
       position: absolute;

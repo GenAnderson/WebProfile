@@ -48,8 +48,8 @@ const ProjectsOther = () => {
     }
   };
 
-  console.log("rotation: ", rotation);
-  console.log("arrow: ", removeArrow);
+  // console.log("rotation: ", rotation);
+  // console.log("arrow: ", removeArrow);
 
   const animateGear = (control, inView, scrollDirection) => {
     if (inView) {

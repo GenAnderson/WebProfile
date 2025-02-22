@@ -9,7 +9,7 @@ export const getRSIPhotoUpValues = (screenSize) => {
     case "max":
       return ["0rem", "-62rem"];
     case "max120":
-      return ["0rem", "-55rem"];
+      return ["0rem", "-50rem"];
     case "max55":
     default:
       return ["0rem", "-50rem"];
