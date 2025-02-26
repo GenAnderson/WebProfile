@@ -31,17 +31,17 @@ const Skills = ({ currentPage }) => {
       },
     },
   };
-  const icons = [
-    css,
-    html,
-    js,
-    react,
-    nextjs,
-    nodejs,
-    aws,
-    mysql,
-    mongodb,
-    typescript,
+  const iconData = [
+    { src: css, name: "CSS" },
+    { src: html, name: "HTML" },
+    { src: js, name: "Javascript" },
+    { src: react, name: "React" },
+    { src: nextjs, name: "Nextjs" },
+    { src: nodejs, name: "Nodejs" },
+    { src: aws, name: "AWS" },
+    { src: mysql, name: "MySQL" },
+    { src: mongodb, name: "MongoDB" },
+    { src: typescript, name: "Typescript" },
   ];
 
   return (
@@ -54,12 +54,12 @@ const Skills = ({ currentPage }) => {
       <img src={keyboardBG} alt="keyboard" className="skillsBG"></img>
       <div className="skills-container">
         <h2>Skills</h2>
-        {icons.map((icon) => (
-          <div key={icon} className="icon-container">
+        {iconData.map((icon) => (
+          <div key={icon.name} className="icon-container">
             <div className="icon-imageContainer">
-              <img src={icon} alt={`${icon}-icon`}></img>
+              <img src={icon.src} alt={`${icon.name}-icon`}></img>
             </div>
-            <span className="title">{icon}</span>
+            <span className="title">{icon.name}</span>
           </div>
         ))}
       </div>
