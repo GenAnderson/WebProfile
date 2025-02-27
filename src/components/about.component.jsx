@@ -59,7 +59,7 @@ const About = ({ currentPage }) => {
         </p>
 
         <p>
-          Currently I'm working with a team builing a SaaS application that
+          Currently I'm working with a team building a SaaS application that
           leverages Nextjs, SQL, and typescript. We hope to have our product to
           market by 2026.
         </p>
