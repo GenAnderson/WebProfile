@@ -54,15 +54,14 @@ const About = ({ currentPage }) => {
           ability to communicate effectively, think critically, and prioritize
           tasks to meet deadlines. I became highly resourceful in finding
           solutions and optimizing workflows, ensuring that projects stayed on
-          track even in challenging circumstances. I pivoted to a different
-          career path and started a new journey in the tech industry. I delved
-          into various online courses and tutorials to grasp the fundamentals of
-          web development and from there, created a couple of websites for
-          colleagues. I relish in the creative process and fortified what I'd
-          learned by enrolling in a boot camp. This not only expanded my
-          technical skills but also provided a deeper understanding of the
-          intricacies within the coding world. I hope to one day have the
-          opportunity to make my place in this industry.
+          track even in challenging circumstances. I pivoted to tech about three
+          years ago and have relished everything I've learned since.
+        </p>
+
+        <p>
+          Currently I'm working with a team builing a SaaS application that
+          leverages Nextjs, SQL, and typescript. We hope to have our product to
+          market by 2026.
         </p>
       </motion.div>
     </motion.div>
